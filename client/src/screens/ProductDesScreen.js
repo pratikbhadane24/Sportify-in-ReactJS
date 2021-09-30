@@ -41,8 +41,8 @@ export default function ProductDesScreen({ match }) {
                 })}
               </select>
             </div>
-              <hr />
-              <button className="btn btn-dark btn-lg">Add to Cart</button>
+            <hr />
+            <button className="btn btn-dark btn-lg">Add to Cart</button>
           </div>
         </div>
       </div>
