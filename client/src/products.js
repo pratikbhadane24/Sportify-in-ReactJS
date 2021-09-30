@@ -1,5 +1,6 @@
 const products = [
   {
+    id: 1,
     rating: 5,
     reviews: [],
     countInStock: 4,
@@ -12,6 +13,7 @@ const products = [
       "The newly engineered PUMA Spike 19.2 is a true performance shoe for cricket athletes. The mesh and synthetic upper construction supports multi-directional movements and offers superb durability. A lightweight EVA midsole ensures optimal cushioning, and together with the high performance outsole, provides superior stability and traction.",
   },
   {
+    id: 2,
     rating: 5,
     reviews: [],
     countInStock: 0,
@@ -24,6 +26,7 @@ const products = [
       "Powerful performance meets futuristic fashion in the HYBRID Ozone trainers. Game-changing HYBRID and ProFoam technology in the midsole provides optimum cushioning and comfort, while the bold silhouette puts these kicks at the cutting edge of footwear design.",
   },
   {
+    id: 3,
     rating: 4.25,
     reviews: [],
     countInStock: 5,
@@ -36,6 +39,7 @@ const products = [
       "The Premier League Pitch Football lets you play with pride.It has a smooth, durable design with team graphics that make it easy to see the ball across the pitch.",
   },
   {
+    id: 4,
     rating: 4.5,
     reviews: [],
     countInStock: 5,
@@ -48,6 +52,7 @@ const products = [
       "The Nike Mercurial Superfly 8 Club TF combines breathable and flexible materials for a seamless fit.A rubber sole helps supercharge traction on turf.",
   },
   {
+    id: 5,
     rating: 5,
     reviews: [],
     countInStock: 7,
@@ -59,6 +64,7 @@ const products = [
       "HEAD Titanium 3100 tennis racket is an ideal choice for a wide range of recreational players including beginners. Engineered with a graphite composite frame for lightweight performance and a tacky grip that provides a secure feel. The oversized head creates a larger sweet spot that is perfect for players still mastering precision.",
   },
   {
+    id: 6,
     rating: 5,
     reviews: [],
     countInStock: 6,
@@ -71,6 +77,7 @@ const products = [
       "The Slazenger Championship is a quality tennis ball which is suitable for play on all different court surfaces with consistency. It is ITF approved and one of the most widely used balls at club & tournament level.",
   },
   {
+    id: 7,
     rating: 4.0,
     reviews: [],
     countInStock: 5,
@@ -83,6 +90,7 @@ const products = [
       "Sleek and sporty, yet sophisticated, the Scuderia Ferrari Race Kart Cat-X Mid Motorsport Shoes are fast and fierce. With a smooth leather upper, elegant stitching and subtle Scuderia Ferrari branding, these race-ready kicks are for hardcore fans.",
   },
   {
+    id: 8,
     rating: 4.0,
     reviews: [],
     countInStock: 5,

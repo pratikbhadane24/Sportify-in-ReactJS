@@ -15,7 +15,14 @@ h1{
   font-size: 18px !important;
   text-align: left;
 }
+p{
+  text-align: left !important;
+}
 
 .img-fluid {
   height: 200px !important;
+}
+
+.bigImg{
+  height: inherit !important;
 }
