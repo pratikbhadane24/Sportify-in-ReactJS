@@ -4,7 +4,7 @@ const products = [
     reviews: [],
     countInStock: 4,
     name: "PUMA Spike 19.2 Men's Cricket Boots",
-    price: "6,499",
+    price: 6499,
     image:
       "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/105510/15/sv01/fnd/IND/fmt/png/PUMA-Spike-19.2-Men's-Cricket-Boots",
     category: "Cricket",
@@ -16,7 +16,7 @@ const products = [
     reviews: [],
     countInStock: 0,
     name: "Hybrid NX Ozone Jr",
-    price: "3,849",
+    price: 3849,
     image:
       "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/193303/01/sv01/fnd/IND/fmt/png/Hybrid-NX-Ozone-Jr",
     category: "Running",
@@ -28,7 +28,7 @@ const products = [
     reviews: [],
     countInStock: 5,
     name: "Premier League Pitch",
-    price: "1,495",
+    price: 1495,
     image:
       "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,b_rgb:f5f5f5/a722cbbe-1339-45da-aacb-e223e5816d4e/premier-league-pitch-football-S8FBsp.png",
     category: "Football",
@@ -40,7 +40,7 @@ const products = [
     reviews: [],
     countInStock: 5,
     name: "Nike Mercurial Superfly 8 Club TF",
-    price: "5,995",
+    price: 5995,
     image:
       "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/72c2ca72-142d-4a4e-80c8-71d687bba894/mercurial-superfly-8-club-tf-artificial-football-shoe-dqZF7f.png",
     category: "Football",
@@ -52,7 +52,7 @@ const products = [
     reviews: [],
     countInStock: 7,
     name: "Head Titanium 3100",
-    price: "3,360",
+    price: 3360,
     image: "https://tennishub.in/media/catalog/product//r/h/rh10831_1_3.jpg",
     category: "Tennis",
     description:
@@ -63,7 +63,7 @@ const products = [
     reviews: [],
     countInStock: 6,
     name: "Slazenger Championship Balls Can",
-    price: "380",
+    price: 380,
     image:
       "https://tennishub.in/media/catalog/product/cache/e9413e5bf2a6169677ce405acbf67ac6/b/a/bas1000_1.jpg",
     category: "Tennis",
@@ -75,7 +75,7 @@ const products = [
     reviews: [],
     countInStock: 5,
     name: "Scuderia Ferrari Race Kart Cat-X Mid Motorsport Shoes",
-    price: "4,499",
+    price: 4499,
     image:
       "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/306549/02/sv01/fnd/IND/fmt/png/Scuderia-Ferrari-Race-Kart-Cat-X-Mid-Motorsport-Shoes",
     category: "Motorsports",
@@ -87,7 +87,7 @@ const products = [
     reviews: [],
     countInStock: 5,
     name: "evoSPEED KW 3 bat",
-    price: "1,699",
+    price: 1699,
     image:
       "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/053366/25/fnd/IND/fmt/png/evoSPEED-KW-3-bat",
     category: "Cricket",
