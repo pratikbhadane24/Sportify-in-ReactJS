@@ -1,0 +1,24 @@
+{
+  "name": "sportify",
+  "version": "2.0.0",
+  "description": "Sportify in ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratikbhadane24/Sportify-in-ReactJS.git"
+  },
+  "author": "Pratik Bhadane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pratikbhadane24/Sportify-in-ReactJS/issues"
+  },
+  "homepage": "https://github.com/pratikbhadane24/Sportify-in-ReactJS#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13"
+  }
+}
