@@ -7,7 +7,7 @@ export default function Product({ product }) {
         <img src={product.image} className="img-fluid" alt="product" />
         <h1>{product.name}</h1>
         <h1>Rating: {product.rating}</h1>
-        <h1>Price: {product.price}</h1>
+        <h1>Price: ₹{product.price}</h1>
       </div>
     </div>
   );
