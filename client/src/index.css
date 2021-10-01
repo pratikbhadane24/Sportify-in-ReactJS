@@ -11,12 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-h1{
+h1 {
   font-size: 18px !important;
   text-align: left;
   color: black !important;
 }
-p{
+p {
   text-align: left !important;
 }
 
@@ -24,6 +24,6 @@ p{
   height: 200px !important;
 }
 
-.bigImg{
+.bigImg {
   height: inherit !important;
 }
