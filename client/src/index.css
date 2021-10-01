@@ -27,3 +27,60 @@ p {
 .bigImg {
   height: inherit !important;
 }
+
+/* Footer START */
+.foot {
+  padding: 20px;
+}
+.foot-color {
+  color: rgba(255, 255, 255);
+  text-decoration: none;
+  border-radius: 0 !important;
+}
+.foot-color:hover {
+  color: rgb(150, 150, 150);
+}
+
+/* Buttons */
+.wa {
+  background-color: #25d366 !important;
+  color: white !important;
+}
+.wa:hover {
+  color: #25d366 !important;
+  background-color: white !important;
+}
+
+.twt {
+  background-color: #1da1f2 !important;
+  color: white !important;
+}
+.twt:hover {
+  color: #1da1f2 !important;
+  background-color: white !important;
+}
+.fb {
+  color: white !important;
+  background-color: #4267b2 !important;
+}
+.fb:hover {
+  background-color: white !important;
+  color: #4267b2 !important;
+}
+.yt {
+  background-color: #ff0000 !important;
+  color: white !important;
+}
+.yt:hover {
+  color: #ff0000 !important;
+  background-color: white !important;
+}
+.mail {
+  color: white !important;
+  background-color: goldenrod !important;
+}
+.mail:hover {
+  color: goldenrod !important;
+  background-color: white !important;
+}
+/* Footer ENDs Here */

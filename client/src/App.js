@@ -5,6 +5,7 @@ import bootstrap from "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import Homescreen from "./screens/Homescreen";
 import ProductDesScreen from "./screens/ProductDesScreen";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" component={Homescreen} exact />
         <Route path="/product/:id" component={ProductDesScreen} />
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

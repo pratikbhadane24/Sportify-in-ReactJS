@@ -11,10 +11,10 @@ export default function Product({ product }) {
           <div className=" text-start">
             <h1>{product.name}</h1>
             <Rating
-              style={{ color: "red" }}
+              style={{ color: "orange" }}
               initialRating={product.rating}
-              emptySymbol="fas fa-heart-broken fa-1x"
-              fullSymbol="fa fa-heart fa-1x"
+              emptySymbol="fa fa-star-o"
+              fullSymbol="fa fa-star"
               readonly
             />
             <h1>Price: ₹{product.price}</h1>
