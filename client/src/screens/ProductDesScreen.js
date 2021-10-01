@@ -1,7 +1,7 @@
 import React from "react";
-import products from "../products";
 
 export default function ProductDesScreen({ match }) {
+  const products = [];
   const productid = match.params.id;
   const product = products.find((product) => product.id == productid);
 

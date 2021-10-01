@@ -5,7 +5,7 @@ const Product = require("../models/productModel");
 router.get("/getallproducts", (req, res) => {
   Product.find({}, (err, docs) => {
     if (!err) {
-      return res.json({ data: docs });
+      return res.send(docs);
     } else {
       return res.status(400).json({ message: "Something went wrong!" });
     }

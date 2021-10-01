@@ -4,23 +4,21 @@ import Rating from "react-rating";
 
 export default function Product({ product }) {
   return (
-    <div className="col-md-3 m-3 card p-2">
-      <div>
-        <Link to={`product/${product.id}`}>
-          <img src={product.image} className="img-fluid" alt="product" />
-          <div className=" text-start">
-            <h1>{product.name}</h1>
-            <Rating
-              style={{ color: "orange" }}
-              initialRating={product.rating}
-              emptySymbol="fa fa-star-o"
-              fullSymbol="fa fa-star"
-              readonly
-            />
-            <h1>Price: ₹{product.price}</h1>
-          </div>
-        </Link>
-      </div>
+    <div>
+      <Link to={`product/${product.id}`}>
+        <img src={product.image} className="img-fluid" alt="product" />
+        <div className=" text-start">
+          <h1>{product.name}</h1>
+          <Rating
+            style={{ color: "orange" }}
+            initialRating={product.rating}
+            emptySymbol="fa fa-star-o"
+            fullSymbol="fa fa-star"
+            readonly
+          />
+          <h1>Price: ₹{product.price}</h1>
+        </div>
+      </Link>
     </div>
   );
 }
