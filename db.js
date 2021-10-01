@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-var mongoDBURL =
-  "mongodb+srv://pratik:chelsea%407@cluster0.5yjcb.mongodb.net/Sportify";
+dotenv.config({ path: "./.env" });
 
-mongoose.connect(mongoDBURL, {
+mongoose.connect(process.env.MONGODB_URL, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
