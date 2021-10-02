@@ -18,8 +18,8 @@ export default function Homescreen() {
       })
       .catch((err) => {
         console.log(err);
-      }) 
-    dispatch(getAllProducts);
+      });
+    dispatch(getAllProducts());
   }, []);
 
   return (
