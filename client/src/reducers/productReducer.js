@@ -15,7 +15,7 @@ export const getAllProductsReducer = (state = {}, action) => {
         loading: false,
       };
     default: {
-      return "op";
+      return state;
     }
   }
 };
