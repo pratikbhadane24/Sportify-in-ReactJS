@@ -3,36 +3,38 @@ import axios from "axios";
 import Product from "../components/Product";
 import { useEffect, useState } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../actions/productActions";
+import { getAllProductsReducer } from "../reducers/productReducer";
 
 export default function Homescreen() {
-  const [products, setproducts] = useState([]);
+  const getallproductsstate = useSelector(
+    (state) => state.getAllProductsReducer
+  );
+
+  const { loading, products, error } = getallproductsstate;
+
   const dispatch = useDispatch();
   useEffect(() => {
-    axios
-      .get("/api/products/getallproducts")
-      .then((res) => {
-        console.log(res);
-        setproducts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
     dispatch(getAllProducts());
   }, []);
 
   return (
     <div>
       <div className="row justify-content-center">
-        {products.length &&
+        {loading ? (
+          <h1>Loading...</h1>
+        ) : error ? (
+          <h1>Something Went Wrong</h1>
+        ) : (
           products.map((product) => {
             return (
-              <div className="col-md-3 m-3 card p-2" key={product._id}>
+              <div className="col-md-3 m-2 p-2 card">
                 <Product product={product} />
               </div>
             );
-          })}
+          })
+        )}
       </div>
     </div>
   );
