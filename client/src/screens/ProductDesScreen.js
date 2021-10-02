@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductById } from "../actions/productActions";
 
 export default function ProductDesScreen({ match }) {
   const products = [];
   const productid = match.params.id;
   const product = products.find((product) => product.id == productid);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProductById(productid));
+  }, []);
 
   return (
     <div>
-      <div className="row">
+      {/* <div className="row">
         <div className="col-md-6">
           <div className="card p-5 m-2">
             <h1>{product.name}</h1>
@@ -45,7 +52,7 @@ export default function ProductDesScreen({ match }) {
             <button className="btn btn-dark btn-lg">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
