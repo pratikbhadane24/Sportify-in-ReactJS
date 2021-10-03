@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { registerNewUser } from "../actions/userActions";
 
 export default function Registerscreen() {
   const [name, setname] = useState("");
@@ -6,6 +8,8 @@ export default function Registerscreen() {
 
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
+
+const dispatch = useDispatch()
 
   const register = (e) => {
     e.preventDefault();
@@ -15,6 +19,7 @@ export default function Registerscreen() {
       password: password,
     };
     if (password == cpassword) {
+      dispatch(registerNewUser())
     } else {
       alert("The passwords don't match.");
     }
