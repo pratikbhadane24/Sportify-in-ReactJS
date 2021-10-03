@@ -23,9 +23,19 @@ export default function Homescreen() {
     <div>
       <div className="row justify-content-center">
         {loading ? (
-          <img src="https://wallpapercave.com/wp/wp2761194.gif" alt="loading" />
+          <img
+            src="https://wallpapercave.com/wp/wp2761194.gif"
+            alt="loading"
+            height="500"
+            width="1600"
+          />
         ) : error ? (
-          <img src="https://c.tenor.com/_NQggQCrfrcAAAAM/wrong-number-dog.gif" width="300" height="600" alt="loading failed" />
+          <img
+            src="https://c.tenor.com/_NQggQCrfrcAAAAM/wrong-number-dog.gif"
+            width="300"
+            height="600"
+            alt="loading failed"
+          />
         ) : (
           products.map((product) => {
             return (
