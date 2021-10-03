@@ -1,9 +1,10 @@
 import React from "react";
-import { useState, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../actions/cartActions";
 
 export default function Cartscreen() {
   const cartreducerstate = useSelector((state) => state.addToCartReducer);
-
+  const dispatch = useDispatch();
   const { cartItems } = cartreducerstate;
 
   return (
@@ -15,7 +16,7 @@ export default function Cartscreen() {
             <thead className="bg-dark text-light">
               <tr>
                 <th>Name</th>
-                <th>Price</th>
+                <th>Initial Price</th>
                 <th>Quantity</th>
                 <th>Total Price</th>
                 <th>Delete</th>
@@ -29,7 +30,13 @@ export default function Cartscreen() {
                     <td>{item.name}</td>
                     <td>{item.price}</td>
                     <td>
-                      <select className="custom-select" value={item.quantity}>
+                      <select
+                        className="custom-select"
+                        value={item.quantity}
+                        onChange={(e) => {
+                          dispatch(addToCart(item, e.target.value));
+                        }}
+                      >
                         {[...Array(item.countInStock).keys()].map((x, i) => {
                           return <option value={i + 1}>{i + 1}</option>;
                         })}
