@@ -10,7 +10,7 @@ export const registerNewUser = (user) => (dispatch) => {
       console.log(res);
     })
     .catch((err) => {
-      dispatch({ type: "USER_REGISTER_FAILED" });
+      dispatch({ type: "USER_REGISTER_FAILED", payload: err });
       console.log(err);
     });
 };
