@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, deleteFromCart } from "../actions/cartActions";
 
 export default function Cartscreen() {
-  const cartreducerstate = useSelector((state) => state.addToCartReducer);
+  const cartreducerstate = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
   const { cartItems } = cartreducerstate;
 
@@ -44,7 +44,10 @@ export default function Cartscreen() {
                     </td>
                     <td>{item.quantity * item.price}</td>
                     <td>
-                      <i class="fa fa-trash" aria-hidden="true"></i>
+                      <i
+                        class="fa fa-trash"
+                        onClick={()=>dispatch(deleteFromCart(item))}
+                      ></i>
                     </td>
                   </tr>
                 );
