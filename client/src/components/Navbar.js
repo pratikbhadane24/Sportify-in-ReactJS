@@ -1,6 +1,11 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Navbar() {
+  const addtocartreducer = useSelector((state) => state.addToCartReducer);
+
+  const { cartItems } = addtocartreducer;
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,13 +50,12 @@ export default function Navbar() {
             </span>
             <span className="navbar-text p-3">
               <a href="/">
-                <span className="fa fa-sign-in" aria-hidden="true"></span>{" "}
-                Login
+                <span className="fa fa-sign-in" aria-hidden="true"></span> Login
               </a>
             </span>
             <span className="navbar-text p-3">
-              <a href="/">
-                <i class="fa fa-lg fa-shopping-cart"></i>
+              <a className="nav-link" href="/">
+                <i class="fa fa-lg fa-shopping-cart"></i>&nbsp; {cartItems.length}
               </a>
             </span>
           </div>

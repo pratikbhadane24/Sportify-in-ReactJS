@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../actions/cartActions";
 import { getProductById } from "../actions/productActions";
 
 export default function ProductDesScreen({ match }) {
   const productid = match.params.id;
   const dispatch = useDispatch();
+  const [quantity, setquantity] = useState(1);
 
   const getproductbyidstate = useSelector(
     (state) => state.getProductByIdReducer
   );
   const { product, loading, error } = getproductbyidstate;
+
+  function addtocart() {
+    dispatch(addToCart(product, quantity));
+  }
+
   useEffect(() => {
     dispatch(getProductById(productid));
   }, []);
@@ -50,18 +57,24 @@ export default function ProductDesScreen({ match }) {
 
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01">
-                    Options
-                  </label>
+                  <label class="input-group-text">Options</label>
                 </div>
-                <select class="custom-select" id="inputGroupSelect01">
+                <select
+                  class="custom-select"
+                  value={quantity}
+                  onChange={(e) => {
+                    setquantity(e.target.value);
+                  }}
+                >
                   {[...Array(product.countInStock).keys()].map((x, i) => {
                     return <option value={i + 1}>{i + 1}</option>;
                   })}
                 </select>
               </div>
               <hr />
-              <button className="btn btn-dark btn-lg">Add to Cart</button>
+              <button className="btn btn-dark btn-lg" onClick={addtocart}>
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
