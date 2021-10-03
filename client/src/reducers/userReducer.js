@@ -17,5 +17,8 @@ export const registerNewUserReducer = (state = {}, action) => {
         loading: true,
         error: true,
       };
+    default: {
+      return state;
+    }
   }
 };

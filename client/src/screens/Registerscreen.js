@@ -9,7 +9,7 @@ export default function Registerscreen() {
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
 
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const register = (e) => {
     e.preventDefault();
@@ -19,15 +19,15 @@ const dispatch = useDispatch()
       password: password,
     };
     if (password == cpassword) {
-      dispatch(registerNewUser())
+      dispatch(registerNewUser(user));
     } else {
       alert("The passwords don't match.");
     }
   };
 
   return (
-    <div className="signup-form">
-      <form onSubmit={register}>
+    <div className="signup-form container">
+      <form className="card" onSubmit={register}>
         <h4>Sign Up</h4>
         <h1 className="text-center">
           Please fill in this form to create an account!
@@ -63,7 +63,7 @@ const dispatch = useDispatch()
               type="email"
               placeholder="E-mail"
               className="form-control"
-              value={name}
+              value={email}
               required
               onChange={(e) => {
                 setemail(e.target.value);
@@ -112,7 +112,7 @@ const dispatch = useDispatch()
         </div>
         <div className="form-group">
           <label className="form-check-label">
-            <input type="checkbox" required="required" /> I accept the{" "}
+            <input type="checkbox" required  /> I accept the{" "}
             <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
           </label>
         </div>
