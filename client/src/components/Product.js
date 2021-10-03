@@ -7,8 +7,9 @@ export default function Product({ product }) {
     <div>
       <Link to={`product/${product._id}`}>
         <img src={product.image} className="img-fluid" alt="product" />
-        <div className=" text-start">
-          <h1>{product.name}</h1>
+        <div className="bg-dark text-center">
+        <hr/>
+          <h2>{product.name}</h2>
           <Rating
             style={{ color: "orange" }}
             initialRating={product.rating}
@@ -16,7 +17,9 @@ export default function Product({ product }) {
             fullSymbol="fa fa-star"
             readonly
           />
-          <h1>Price: ₹{product.price}</h1>
+        <br />
+          <h2>Price: ₹{product.price}</h2>
+        <br />
         </div>
       </Link>
     </div>

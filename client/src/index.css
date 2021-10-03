@@ -16,10 +16,24 @@ h1 {
   text-align: left;
   color: black !important;
 }
+h2 {
+  font-size: 18px !important;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none !important;
+}
+hr{
+  color: rgba(0, 0, 0) !important;
+}
 p {
   text-align: left !important;
 }
-
+.card{
+  border-radius: 20px !important;
+}
+.text-light{
+  color: rgb(255, 255, 255);
+}
 .img-fluid {
   height: 200px !important;
 }

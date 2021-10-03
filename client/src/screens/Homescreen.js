@@ -23,14 +23,16 @@ export default function Homescreen() {
     <div>
       <div className="row justify-content-center">
         {loading ? (
-          <h1>Loading...</h1>
+          <img src="https://wallpapercave.com/wp/wp2761194.gif" alt="loading" />
         ) : error ? (
-          <h1>Something Went Wrong</h1>
+          <img src="https://c.tenor.com/_NQggQCrfrcAAAAM/wrong-number-dog.gif" width="300" height="600" alt="loading failed" />
         ) : (
           products.map((product) => {
             return (
-              <div className="col-md-3 m-2 p-2 card">
-                <Product product={product} />
+              <div className="col-md-3 m-2 p-2">
+                <div className="bg-light card">
+                  <Product product={product} />
+                </div>
               </div>
             );
           })
