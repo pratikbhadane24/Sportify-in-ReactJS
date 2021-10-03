@@ -54,7 +54,7 @@ export default function Navbar() {
               </a>
             </span>
             <span className="navbar-text p-3">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/cart">
                 <i class="fa fa-lg fa-shopping-cart"></i>&nbsp; {cartItems.length}
               </a>
             </span>

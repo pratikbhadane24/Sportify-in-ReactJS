@@ -65,7 +65,7 @@ export default function ProductDesScreen({ match }) {
                   <label class="input-group-text">Options</label>
                 </div>
                 <select
-                  class="custom-select"
+                  className="custom-select"
                   value={quantity}
                   onChange={(e) => {
                     setquantity(e.target.value);
