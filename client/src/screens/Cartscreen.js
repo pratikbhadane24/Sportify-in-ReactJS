@@ -6,12 +6,16 @@ export default function Cartscreen() {
   const cartreducerstate = useSelector((state) => state.cartReducer);
   const dispatch = useDispatch();
   const { cartItems } = cartreducerstate;
+  var subtotal = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   return (
     <div>
       <div className="row mt-5 justify-content-center">
-        <h3 className="text-cnter m-5">My Cart</h3>
-        <div className="col-md-8">
+        <div className="col-md-8 card">
+          <h3 className="text-cnter m-5">My Cart</h3>
           <table className="table table-striped table-bordered table-hover mb-5">
             <thead className="bg-dark text-light">
               <tr>
@@ -28,7 +32,7 @@ export default function Cartscreen() {
                 return (
                   <tr>
                     <td>{item.name}</td>
-                    <td>{item.price}</td>
+                    <td>₹{item.price}</td>
                     <td>
                       <select
                         className="custom-select"
@@ -42,11 +46,11 @@ export default function Cartscreen() {
                         })}
                       </select>
                     </td>
-                    <td>{item.quantity * item.price}</td>
+                    <td>₹{item.quantity * item.price}</td>
                     <td>
                       <i
                         class="fa fa-trash"
-                        onClick={()=>dispatch(deleteFromCart(item))}
+                        onClick={() => dispatch(deleteFromCart(item))}
                       ></i>
                     </td>
                   </tr>
@@ -54,8 +58,15 @@ export default function Cartscreen() {
               })}
             </tbody>
           </table>
+          <hr />
+          <h4 className="m-3">SubTotal: ₹{subtotal}</h4>
+          <hr />
+          <button className="m-3 mb-4 btn btn-success btn-pay">
+            Proceed To Payment
+          </button>
         </div>
       </div>
+      <br /> <br />
     </div>
   );
 }

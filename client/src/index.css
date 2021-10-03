@@ -22,16 +22,17 @@ h2 {
   color: rgb(255, 255, 255);
   text-decoration: none !important;
 }
-hr{
+h4 {
+  font-size: 30px !important;
+  font-weight: bold !important;
+}
+hr {
   color: rgba(0, 0, 0) !important;
 }
 p {
   text-align: left !important;
 }
-.card{
-  border-radius: 20px !important;
-}
-.text-light{
+.text-light {
   color: rgb(255, 255, 255);
 }
 .img-fluid {
@@ -40,6 +41,11 @@ p {
 
 .bigImg {
   height: inherit !important;
+}
+
+.btn-pay:hover {
+  color: black !important;
+  background-color: skyblue !important;
 }
 
 /* Footer START */
