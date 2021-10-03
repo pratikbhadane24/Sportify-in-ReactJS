@@ -49,7 +49,7 @@ export default function Navbar() {
               </a>
             </span>
             <span className="navbar-text p-3">
-              <a href="/">
+              <a href="/login">
                 <span className="fa fa-sign-in" aria-hidden="true"></span> Login
               </a>
             </span>
