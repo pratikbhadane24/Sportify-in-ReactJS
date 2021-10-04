@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../actions/userActions";
 
 export default function Navbar() {
   const cartreducer = useSelector((state) => state.cartReducer);
@@ -7,6 +8,8 @@ export default function Navbar() {
   const { cartItems } = cartreducer;
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -72,8 +75,13 @@ export default function Navbar() {
                         Orders
                       </a>
                     </li>
-                    <li>
-                      <a className="dropdown-item">Logout</a>
+                    <li
+                      className="dropdown-item"
+                      onClick={() => {
+                        dispatch(logoutUser());
+                      }}
+                    >
+                      Logout
                     </li>
                   </ul>
                 </div>
