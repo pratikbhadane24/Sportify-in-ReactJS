@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { registerNewUser } from "../actions/userActions";
+import Loader from "../components/Loader";
 
 export default function Registerscreen() {
+  const registerstate = useSelector((state) => state.registerNewUserReducer);
+
+  const { loading, error, success } = registerstate;
+
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
 
@@ -37,6 +42,17 @@ export default function Registerscreen() {
         <h1 className="text-center">
           Please fill in this form to create an account!
         </h1>
+        {loading && <Loader />}
+        {error && (
+          <div class="alert alert-danger" role="alert">
+            Email Already Registered!!
+          </div>
+        )}
+        {success && (
+          <div class="alert alert-success" role="alert">
+            Registration Successful.
+          </div>
+        )}
         <hr />
         <div className="form-group">
           <div className="input-group">

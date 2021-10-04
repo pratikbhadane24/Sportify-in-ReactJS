@@ -5,7 +5,7 @@ import Rating from "react-rating";
 export default function Product({ product }) {
   return (
     <div>
-      <Link to={`product/${product._id}`}>
+      <Link to={`product/${product._id}`} style={{ textDecoration: 'none' }}>
         <img src={product.image} className="img-fluid" alt="product" />
         <div className="bg-dark text-center">
         <hr/>

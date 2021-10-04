@@ -1,8 +1,12 @@
+import { load } from "dotenv";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../actions/userActions";
+import Loader from "../components/Loader";
 
 export default function Loginscreen() {
+  const loginreducer = useSelector((state) => state.loginReducer);
+  const { loading, error } = loginreducer;
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
@@ -32,6 +36,7 @@ export default function Loginscreen() {
             width="300"
             height="120"
           />
+          {loading && <Loader />}
           <br />
           <br />
           <h1 className="h3 mb-3 text-center fw-normal">Please Log in</h1>
@@ -69,6 +74,12 @@ export default function Loginscreen() {
             Log in
           </button>
           <br />
+          <br />
+          {error && (
+            <div class="alert alert-danger" role="alert">
+              Invalid Credentials
+            </div>
+          )}
           <br />
           <label>
             New Here? <a href="/register">Register</a>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../actions/cartActions";
 import { getProductById } from "../actions/productActions";
+import Error from "../components/Error";
+import Loader from "../components/Loader";
 
 export default function ProductDesScreen({ match }) {
   const productid = match.params.id;
@@ -24,19 +26,9 @@ export default function ProductDesScreen({ match }) {
   return (
     <div>
       {loading ? (
-        <img
-          src="https://wallpapercave.com/wp/wp2761194.gif"
-          alt="loading"
-          height="500"
-          width="1600"
-        />
+        <Loader />
       ) : error ? (
-        <img
-          src="https://c.tenor.com/_NQggQCrfrcAAAAM/wrong-number-dog.gif"
-          width="300"
-          height="600"
-          alt="loading failed"
-        />
+        <Error error="Something went wrong...!" />
       ) : (
         <div className="row">
           <div className="col-md-6">

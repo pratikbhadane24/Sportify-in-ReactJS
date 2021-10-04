@@ -14,7 +14,7 @@ export const registerNewUserReducer = (state = {}, action) => {
     case "USER_REGISTER_FAILED":
       return {
         ...state,
-        loading: true,
+        loading: false,
         error: "User Already Registered",
       };
     default: {
@@ -38,7 +38,7 @@ export const loginReducer = (state = {}, action) => {
     case "USER_LOGIN_FAILED":
       return {
         ...state,
-        loading: true,
+        loading: false,
         error: "Invalid Credentials!",
       };
 
