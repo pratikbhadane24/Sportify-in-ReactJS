@@ -32,6 +32,11 @@ hr {
 p {
   text-align: left !important;
 }
+.navbar-brand{
+  font-size: 26px !important;
+  font-weight: 500 !important;
+}
+
 .text-light {
   color: rgb(255, 255, 255);
 }
