@@ -27,6 +27,11 @@ export default function Registerscreen() {
 
   return (
     <div className="signup-form container">
+      <img
+        src="https://i.ibb.co/kJHDDW1/loginlogo.gif"
+        width="300"
+        height="120"
+      />
       <form className="card" onSubmit={register}>
         <h4>Sign Up</h4>
         <h1 className="text-center">
@@ -112,12 +117,15 @@ export default function Registerscreen() {
         </div>
         <div className="form-group">
           <label className="form-check-label">
-            <input type="checkbox" required  /> I accept the{" "}
+            <input type="checkbox" required /> I accept the{" "}
             <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
           </label>
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-primary btn-lg">
+          <button
+            type="submit"
+            className="w-100 btn btn-lg btn-dark btn-outline-info"
+          >
             Register
           </button>
         </div>
