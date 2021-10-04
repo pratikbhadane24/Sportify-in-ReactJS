@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../actions/userActions";
-// import { registerNewUser } from "../actions/userActions";
 
 export default function Loginscreen() {
   const [email, setemail] = useState("");

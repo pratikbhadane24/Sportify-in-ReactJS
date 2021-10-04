@@ -6,20 +6,22 @@ export default function Navbar() {
 
   const { cartItems } = cartreducer;
 
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <a className="navbar-brand" href="/">
             Sportify
@@ -43,21 +45,61 @@ export default function Navbar() {
                 </a>
               </li>
             </ul>
-            <span className="navbar-text ms-auto p-3">
-              <a href="/register">
-                <span className="fa fa-user-plus"></span> Register
-              </a>
-            </span>
-            <span className="navbar-text p-3">
-              <a href="/login">
-                <span className="fa fa-sign-in" aria-hidden="true"></span> Login
-              </a>
-            </span>
-            <span className="navbar-text p-3">
-              <a className="nav-link" href="/cart">
-                <i class="fa fa-lg fa-shopping-cart"></i>&nbsp; {cartItems.length}
-              </a>
-            </span>
+
+            <div className="navbar-nav ms-auto">
+              {currentUser ? (
+                <div className="dropdown mt-2">
+                  <button
+                    className="btn btn-dark dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {currentUser.name}
+                  </button>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a className="dropdown-item" href="/profile">
+                        Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Orders
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item">Logout</a>
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                <div className="mt-3">
+                  <span className="navbar-text p-3">
+                    <a href="/register">
+                      <span className="fa fa-user-plus"></span> Register
+                    </a>
+                  </span>
+                  <span className="navbar-text p-3">
+                    <a href="/login">
+                      <span className="fa fa-sign-in" aria-hidden="true"></span>{" "}
+                      Login
+                    </a>
+                  </span>
+                </div>
+              )}
+              ;
+              <span className="navbar-text">
+                <a className="nav-link" href="/cart">
+                  <i className="fa fa-lg fa-shopping-cart"></i>&nbsp;{" "}
+                  {cartItems.length}
+                </a>
+              </span>
+            </div>
           </div>
         </div>
       </nav>
