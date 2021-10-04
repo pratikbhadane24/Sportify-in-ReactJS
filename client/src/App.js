@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Cartscreen from "./screens/Cartscreen";
 import Registerscreen from "./screens/Registerscreen";
 import Loginscreen from "./screens/Loginscreen";
+import Aboutusscreen from "./screens/Aboutusscreen";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/cart" component={Cartscreen} />
         <Route path="/register" component={Registerscreen} />
         <Route path="/login" component={Loginscreen} />
+        <Route path="/about-us" component={Aboutusscreen} />
       </BrowserRouter>
       <Footer />
     </div>
