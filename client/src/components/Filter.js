@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { filterProducts } from "../actions/productActions";
 
 export default function Filter() {
   const [searchkey, setsearchkey] = useState("");
   const [sort, setsort] = useState("popular");
   const [category, setcategory] = useState("all");
+
+  const dispatch = useDispatch();
 
   return (
     <p>
@@ -25,7 +29,7 @@ export default function Filter() {
             <input
               value={searchkey}
               onChange={(e) => {
-                searchkey(e.target.value);
+                setsearchkey(e.target.value);
               }}
               type="text"
               placeholder="Search Products"
@@ -61,7 +65,14 @@ export default function Filter() {
             </select>
           </div>
 
-          <button className="col-2 m-2 btn btn-dark">Filter Search</button>
+          <button
+            className="col-2 m-2 btn btn-dark"
+            onClick={() => {
+              dispatch(filterProducts(searchkey, sort, category));
+            }}
+          >
+            Filter Search
+          </button>
         </div>
         <hr />
       </div>
