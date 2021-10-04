@@ -27,21 +27,23 @@ router.post("/register", (req, res) => {
   });
 });
 
-router.post("/login", (req,res)=>{
-  User.find({email: req.body.email, password: req.body.password}, (err, docs) => {
-    if(docs.length > 0){
+router.post("/login", (req, res) => {
+  User.find(
+    { email: req.body.email, password: req.body.password },
+    (err, docs) => {
+      if (docs.length > 0) {
+        const user = {
+          name: docs[0].name,
+          _id: docs[0]._id,
+          email: docs[0].email,
+        };
 
-      res.send("Login Success!")
-
-    }else{
-
-      return res.status(400).json({message: 'Invalid Credentials!'})
+        res.send(user);
+      } else {
+        return res.status(400).json({ message: "Invalid Credentials!" });
+      }
     }
-
-
-
-  })
-})
-
+  );
+});
 
 module.exports = router;

@@ -21,6 +21,9 @@ export const loginUser = (user) => (dispatch) => {
     .post("/api/users/login/", user)
     .then((res) => {
       dispatch({ type: "USER_LOGIN_SUCCESS" });
+
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
+      window.location.href = "/";
       console.log(res);
     })
     .catch((err) => {

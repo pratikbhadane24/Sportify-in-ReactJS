@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../actions/userActions";
 // import { registerNewUser } from "../actions/userActions";
@@ -17,6 +17,12 @@ export default function Loginscreen() {
     };
     dispatch(loginUser(user));
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("currentUser")) {
+      window.location.href = "/";
+    }
+  }, []);
 
   return (
     <div className="login-body">
