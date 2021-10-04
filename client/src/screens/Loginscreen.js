@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../actions/userActions";
 // import { registerNewUser } from "../actions/userActions";
 
 export default function Loginscreen() {
@@ -8,12 +9,13 @@ export default function Loginscreen() {
 
   const dispatch = useDispatch();
 
-  const register = (e) => {
+  const login = (e) => {
     e.preventDefault();
     const user = {
       email: email,
       password: password,
     };
+    dispatch(loginUser(user));
   };
 
   return (
@@ -31,19 +33,26 @@ export default function Loginscreen() {
           <div className="form-floating">
             <input
               type="email"
+              placeholder="E-mail"
               className="form-control"
-              id="inputEmail"
+              value={email}
               required
+              onChange={(e) => {
+                setemail(e.target.value);
+              }}
             />
             <label for="floatingInput">Email address</label>
           </div>
           <div className="form-floating">
             <input
               type="password"
-              className="form-control"
-              id="inputPassword"
               placeholder="Password"
+              className="form-control"
+              value={password}
               required
+              onChange={(e) => {
+                setpassword(e.target.value);
+              }}
             />
             <label for="floatingPassword">Password</label>
           </div>
@@ -77,7 +86,9 @@ export default function Loginscreen() {
           </div>
 
           <br />
-          <p className="mt-5 mb-3 text-muted text-center">&copy; Sportify ~ 2021</p>
+          <p className="mt-5 mb-3 text-muted text-center">
+            &copy; Sportify ~ 2021
+          </p>
         </form>
       </div>
     </div>
