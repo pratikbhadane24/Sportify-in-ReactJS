@@ -17,12 +17,12 @@ export default function Aboutusscreen() {
 
       <section class="p-4 mb-3 text-center">
         <div>
-          <h1 class="d-3 mb-5">Meet Our Developers</h1>
+          <h4 class="d-3 mb-5">Meet Our Developers</h4>
         </div>
         <div class="container">
           <div class="row g-5">
             <div class="col-lg-4 col-sm-6">
-              <div class="card bg-dark text-light">
+              <div class="card bg-dark text-light ab-card">
                 <div class="card-body">
                   <div>
                     <img
@@ -56,7 +56,7 @@ export default function Aboutusscreen() {
               </div>
             </div>
             <div class="col-lg-4 col-sm-6">
-              <div class="card bg-dark text-light">
+              <div class="card bg-dark text-light ab-card">
                 <div class="card-body">
                   <div>
                     <img
@@ -90,7 +90,7 @@ export default function Aboutusscreen() {
               </div>
             </div>
             <div class="col-lg-4">
-              <div class="card bg-dark text-light">
+              <div class="card bg-dark text-light ab-card">
                 <div class="card-body">
                   <div>
                     <img

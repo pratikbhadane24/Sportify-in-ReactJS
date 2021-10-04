@@ -36,11 +36,11 @@ p {
   font-size: 26px !important;
   font-weight: 500 !important;
 }
-.dropdown-item:active{
-background-color:black !important;
+.dropdown-item:active {
+  background-color: black !important;
 }
 .card-zoom:hover {
-  transform: scale(1.07); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.07);
   border-color: #000000 !important;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(0, 0, 0) !important;
 }
@@ -117,6 +117,28 @@ background-color:black !important;
   background-color: white !important;
 }
 /* Footer ENDs Here */
+/* About US Page START */
+/* Card Buttons */
+.twt-card:hover{
+  color: #1DA1F2 !important; 
+}
+.fb-card:hover{
+  color: #4267B2 !important; 
+}
+.insta-card:hover{
+  color: #E1306C !important;
+}
+
+/* Card */
+.ab-card:hover{
+  transform: scale(1.1);
+  border-color: #5bc0de !important;
+  box-shadow: inset 0 1px 1px #5bc0de, 0 0 8px #5bc0de !important;
+}
+
+
+/* ABOUT US END */
+
 
 /* Registration Page START */
 .form-control {
