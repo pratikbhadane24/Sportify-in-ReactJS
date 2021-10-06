@@ -35,13 +35,18 @@ export default function Homescreen() {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <a href="/product/615634397db4e95a0b48b7db">
-                    <img src="https://i.ibb.co/GVZxJQc/Slide1.png" className="d-block w-100" alt="..."/></a>
+                    <img src="https://lh3.googleusercontent.com/lFxM-qbMQrokqLYET4QWCDr0ZiWTyahiKw3Exe6fdCiMTvNscMcT_FXP7SRhxvBEACjK5FNK33q7F-0xtd1tErY8FFmKX7t2fkveSzXLD67R19BT6xrnJWEGBf0Ui9Nvau_zgxI=w2400" 
+                    className="d-block w-100" alt="..."/></a>
                   </div>
                   <div className="carousel-item">
-                    <img src="https://i.ibb.co/GVZxJQc/Slide1.png" className="d-block w-100" alt="..."/>
+                    <a href="/product/615634397db4e95a0b48b7da">
+                    <img src="https://lh3.googleusercontent.com/mqWS0nUIGVkdcv7y2HW-adYJIHmEEdr9oxLwlqhn1vv-mnikzulWN0rhxLKCZYYiXCgD4qJkcqjG6OEJuOm-pcuZCyVIQ7-a8szA1-XXj_a3jAZ-TUmAiXO_yLrGwpDJaKsNahI=w2400" 
+                    className="d-block w-100" alt="..."/></a>
                   </div>
                   <div className="carousel-item">
-                    <img src="https://i.ibb.co/GVZxJQc/Slide1.png" className="d-block w-100" alt="..."/>
+                  <a href="/product/615634397db4e95a0b48b7df">
+                    <img src="https://lh3.googleusercontent.com/Hwc3ZfBsSTmmoyD_15ueuQJ8FUyY2CGJIvOg-zvlA66POJNcHBgNTU1JVltkdP3Dxcm0Q_gUFcJNeokABQ8dOABNenFQSfUOYFKnOzyckBaOzL-pWKkxueWQ7Cj4nqRYVnX_rk-z=w2400" 
+                    className="d-block w-100" alt="..."/></a>
                   </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
