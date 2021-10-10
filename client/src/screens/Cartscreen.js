@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, deleteFromCart } from "../actions/cartActions";
+import Checkout from "../components/Checkout";
 
 export default function Cartscreen() {
   const cartreducerstate = useSelector((state) => state.cartReducer);
@@ -15,7 +16,7 @@ export default function Cartscreen() {
     <div>
       <div className="row mt-5 justify-content-center">
         <div className="col-md-8 card">
-          <h3 className="text-cnter m-5">My Cart</h3>
+          <h3 className="m-5">My Cart</h3>
           <table className="table table-striped table-bordered table-hover mb-5">
             <thead className="bg-dark text-light">
               <tr>
@@ -61,9 +62,7 @@ export default function Cartscreen() {
           <hr />
           <h4 className="m-3">SubTotal: ₹{subtotal}</h4>
           <hr />
-          <button className="m-3 mb-4 btn btn-success btn-pay">
-            Proceed To Payment
-          </button>
+          <Checkout amount={subtotal} />
         </div>
       </div>
       <br /> <br />
