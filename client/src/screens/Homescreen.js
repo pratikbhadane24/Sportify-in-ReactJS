@@ -25,8 +25,8 @@ export default function Homescreen() {
   return (
     <div>
       <section className="mb-2 pt-2 pb-5">
-        <div className="container bg-dark text-info">
-          <h4>Featured Products</h4>
+        <div className="container">
+          <h4 className="p-3 bg-dark text-info">Featured Products</h4>
           <div
             id="carouselExampleIndicators"
             className="carousel slide"
