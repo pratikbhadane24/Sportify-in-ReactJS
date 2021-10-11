@@ -27,7 +27,28 @@ router.post("/placeorder", async (req, res) => {
   );
 
   if (payment) {
-    res.send("Payment Successful!");
+    const order = new Order({
+      userid: currentUser._id,
+      name: currentUser.name,
+      email: currentUser.email,
+      orderItems: cartItems,
+      shippingAddress: {
+        address: token.card.address_line1,
+        city: token.card.city,
+        country: token.card.country,
+        postalCode: token.card.address_zip,
+      },
+      orderAmount: subtotal,
+      transactionId: payment.source.id,
+      isDelivered: false,
+    });
+    order.save((err) => {
+      if (err) {
+        return res.status(400).json({ message: "Something Went Wrong" });
+      } else {
+        res.send("Order Placed Successfully!");
+      }
+    });
   } else {
     return res.status(400).json({ message: "Payment Failed" });
   }

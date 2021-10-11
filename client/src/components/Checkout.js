@@ -3,7 +3,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { useDispatch } from "react-redux";
 import { placeOrder } from "../actions/orderAction";
 
-export default function Checkout({amount}) {
+export default function Checkout({ amount }) {
   const dispatch = useDispatch();
 
   function tokenHandler(token) {
@@ -14,7 +14,8 @@ export default function Checkout({amount}) {
     <div>
       <StripeCheckout
         token={tokenHandler}
-        amount={amount*100}
+        currency="inr"
+        amount={amount * 100}
         shippingAddress
         stripeKey="pk_test_51JixkcSCvyPsvabEBTo9nDCL49VENL2EC43KAmTZbd9QmqerJpzMmC2E0VMdeWR73pAqZr6ZGPYFZjTWxvTwjUYP00xuLLvtXh"
       >
