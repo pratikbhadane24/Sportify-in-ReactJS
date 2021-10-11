@@ -53,4 +53,17 @@ router.post("/placeorder", async (req, res) => {
     return res.status(400).json({ message: "Payment Failed" });
   }
 });
+
+router.post("/getordersbyuserid", (req, res) => {
+  const userid = req.body.userid;
+
+  Order.find({ userid: userid }, (err, docs) => {
+    if (err) {
+      return res.status(400).json({ message: "Something went Wrong!" });
+    } else {
+      res.send(docs);
+    }
+  });
+});
+
 module.exports = router;

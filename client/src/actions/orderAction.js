@@ -27,13 +27,15 @@ export const placeOrder = (token, subtotal) => (dispatch, getState) => {
     });
 };
 
-export const getOrdersByUserId = () => (dispatch) => {
+export const getOrdersByUserId = () => (dispatch, getState) => {
+  const userid = getState().loginReducer.currentUser._id;
+
   dispatch({ type: "GET_ORDERSBYUSERID_REQUEST" });
   axios
-    .post("/api/orders/getordersbyuserid")
+    .post("/api/orders/getordersbyuserid", { userid: userid })
     .then((res) => {
       dispatch({ type: "GET_ORDERSBYUSERID_SUCCESS", payload: res.data });
-      console.log(res.data)
+      console.log(res.data);
     })
     .catch((err) => {
       dispatch({ type: "GET_ORDERSBYUSERID_FAILED", payload: err });
