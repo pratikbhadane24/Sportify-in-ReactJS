@@ -4,6 +4,7 @@ const router = express.Router();
 const stripe = require("stripe")(
   "sk_test_51JixkcSCvyPsvabEZWRBjRGaWiSHGRwZ7lOko5C8hrziDSBUMduEbkyi4MUU0KwcvGA4B8BPIcUUA4ZCjSB00XHm00QyKspL33"
 );
+const Order = require("../models/orderModel");
 
 router.post("/placeorder", async (req, res) => {
   const { token, cartItems, currentUser, subtotal } = req.body;
