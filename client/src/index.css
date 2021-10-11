@@ -44,6 +44,14 @@ p {
   border-color: #000000 !important;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(0, 0, 0) !important;
 }
+.my_accordion {
+  border: 1px solid black !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(0, 0, 0) !important;
+}
+.my_accordion:hover {
+  color: black !important;
+  background-color: white !important;
+}
 
 .text-light {
   color: rgb(255, 255, 255);
@@ -119,26 +127,24 @@ p {
 /* Footer ENDs Here */
 /* About US Page START */
 /* Card Buttons */
-.twt-card:hover{
-  color: #1DA1F2 !important; 
+.twt-card:hover {
+  color: #1da1f2 !important;
 }
-.fb-card:hover{
-  color: #4267B2 !important; 
+.fb-card:hover {
+  color: #4267b2 !important;
 }
-.insta-card:hover{
-  color: #E1306C !important;
+.insta-card:hover {
+  color: #e1306c !important;
 }
 
 /* Card */
-.ab-card:hover{
+.ab-card:hover {
   transform: scale(1.1);
   border-color: #5bc0de !important;
   box-shadow: inset 0 1px 1px #5bc0de, 0 0 8px #5bc0de !important;
 }
 
-
 /* ABOUT US END */
-
 
 /* Registration Page START */
 .form-control {
