@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrdersByUserId } from "../actions/orderAction";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 export default function Ordersscreen() {
+  const orderstate = useSelector((state) => state.getOrdersByUserIdReducer);
+  const { orders, error, loading } = orderstate;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,11 +33,29 @@ export default function Ordersscreen() {
                 <th>Status</th>
               </tr>
             </thead>
-
             <tbody>
-              <tr></tr>
+              {orders &&
+                orders.map((order) => {
+                  return (
+                    <tr>
+                      <td>{order._id}</td>
+                      <td>₹{order.orderAmount}</td>
+                      <td>{order.createdAt.substring(0, 10)}</td>
+                      <td>{order.transactionId}</td>
+                      <td>
+                        {order.isDelivered ? (
+                          <li>Delivered</li>
+                        ) : (
+                          <li>Order Placed</li>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              {error && <Error error="Something went Wrong." />}
             </tbody>
           </table>
+          {loading && <Loader />}
         </div>
       </div>
       <br /> <br />
