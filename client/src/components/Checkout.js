@@ -1,10 +1,15 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { placeOrder } from "../actions/orderAction";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 export default function Checkout({ amount }) {
   const dispatch = useDispatch();
+  const orderstate = useSelector((state) => state.placeOrderReducer);
+
+  const { loading, success, error } = orderstate;
 
   function tokenHandler(token) {
     dispatch(placeOrder(token, amount));
@@ -12,6 +17,13 @@ export default function Checkout({ amount }) {
 
   return (
     <div>
+      {loading && <Loader />}
+      {success && (
+        <div class="alert alert-success" role="alert">
+          Order Placed Successfully.
+        </div>
+      )}
+      {error && <Error error="Something Went Wrong!" />}
       <StripeCheckout
         token={tokenHandler}
         currency="inr"
