@@ -23,3 +23,28 @@ export const placeOrderReducer = (state = {}, action) => {
       };
   }
 };
+export const getOrdersByUserId = (state = {}, action) => {
+  switch (action.type) {
+    case "GET_ORDERSBYUSERID_REQUEST":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "GET_ORDERSBYUSERID_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        orders: action.payload,
+      };
+    case "GET_ORDERSBYUSERID_FAILED":
+      return {
+        ...state,
+        loading: false,
+        error: true,
+      };
+    default:
+      return {
+        state,
+      };
+  }
+};
