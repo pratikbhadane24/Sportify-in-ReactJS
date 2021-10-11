@@ -23,7 +23,7 @@ export const placeOrderReducer = (state = {}, action) => {
       };
   }
 };
-export const getOrdersByUserId = (state = {}, action) => {
+export const getOrdersByUserIdReducer = (state = {}, action) => {
   switch (action.type) {
     case "GET_ORDERSBYUSERID_REQUEST":
       return {
