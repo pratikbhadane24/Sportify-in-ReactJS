@@ -33,6 +33,7 @@ export const getOrdersByUserId = () => (dispatch) => {
     .post("/api/orders/getordersbyuserid")
     .then((res) => {
       dispatch({ type: "GET_ORDERSBYUSERID_SUCCESS", payload: res.data });
+      console.log(res.data)
     })
     .catch((err) => {
       dispatch({ type: "GET_ORDERSBYUSERID_FAILED", payload: err });

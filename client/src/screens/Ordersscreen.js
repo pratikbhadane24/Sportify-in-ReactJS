@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getOrdersByUserId } from "../actions/orderAction";
 
 export default function Ordersscreen() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (localStorage.getItem("currentUser")) {
+      dispatch(getOrdersByUserId());
+    } else {
+      window.location.href = "/login";
+    }
+  }, []);
+
   return (
     <div>
       <div className="row mt-5 justify-content-center">
@@ -18,14 +30,7 @@ export default function Ordersscreen() {
             </thead>
 
             <tbody>
-
-<tr>
-
-
-    
-</tr>
-
-
+              <tr></tr>
             </tbody>
           </table>
         </div>
