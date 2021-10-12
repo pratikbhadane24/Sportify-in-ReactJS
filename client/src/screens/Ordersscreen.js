@@ -37,7 +37,11 @@ export default function Ordersscreen() {
               {orders &&
                 orders.map((order) => {
                   return (
-                    <tr>
+                    <tr
+                      onClick={() => {
+                        window.location = `/orderinfo/${order._id}`;
+                      }}
+                    >
                       <td>{order._id}</td>
                       <td>₹{order.orderAmount}</td>
                       <td>{order.createdAt.substring(0, 10)}</td>

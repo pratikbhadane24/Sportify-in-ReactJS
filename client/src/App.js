@@ -11,6 +11,7 @@ import Registerscreen from "./screens/Registerscreen";
 import Loginscreen from "./screens/Loginscreen";
 import Aboutusscreen from "./screens/Aboutusscreen";
 import Ordersscreen from "./screens/Ordersscreen";
+import Orderinfo from "./screens/Orderinfo";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" component={Loginscreen} />
         <Route path="/about-us" component={Aboutusscreen} />
         <Route path="/orders" component={Ordersscreen} />
+        <Route path="/orderinfo/:orderid" component={Orderinfo} />
       </BrowserRouter>
       <Footer />
     </div>
