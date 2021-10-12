@@ -32,8 +32,8 @@ export default function Orderinfo({ match }) {
                       Quantity: <b>{item.quantity}</b>
                     </h6>
                     <h6>
-                      Price: {item.quantity} * {item.price} ={" "}
-                      {item.price * item.quantity}
+                      Price: {item.quantity} * ₹{item.price} ={" "}
+                      ₹{item.price * item.quantity}
                     </h6>
                     <hr />
                   </div>
