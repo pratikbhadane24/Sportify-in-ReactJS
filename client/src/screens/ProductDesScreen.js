@@ -4,6 +4,7 @@ import { addToCart } from "../actions/cartActions";
 import { getProductById } from "../actions/productActions";
 import Error from "../components/Error";
 import Loader from "../components/Loader";
+import Review from "../components/Review";
 
 export default function ProductDesScreen({ match }) {
   const productid = match.params.id;
@@ -72,6 +73,10 @@ export default function ProductDesScreen({ match }) {
               <button className="btn btn-dark btn-lg" onClick={addtocart}>
                 Add to Cart
               </button>
+              <br />
+              <br />
+              <hr />
+              <Review />
             </div>
           </div>
         </div>
