@@ -69,7 +69,7 @@ router.post("/getordersbyuserid", (req, res) => {
 router.post("/getorderbyid", (req, res) => {
   const orderid = req.body.orderid;
 
-  Order.find({ orderid: orderid }, (err, docs) => {
+  Order.find({ _id: orderid }, (err, docs) => {
     if (err) {
       return res.status(400).json({ message: "Something went Wrong!" });
     } else {
