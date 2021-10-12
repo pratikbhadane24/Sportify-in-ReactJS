@@ -9,6 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { loginReducer, registerNewUserReducer } from "./reducers/userReducer";
 import {
+  getOrderByIdReducer,
   getOrdersByUserIdReducer,
   placeOrderReducer,
 } from "./reducers/orderReducer";
@@ -21,6 +22,7 @@ const finalReducer = combineReducers({
   loginReducer: loginReducer,
   placeOrderReducer: placeOrderReducer,
   getOrdersByUserIdReducer: getOrdersByUserIdReducer,
+  getOrderByIdReducer: getOrderByIdReducer,
 });
 
 const cartItems = localStorage.getItem("cartItems")
