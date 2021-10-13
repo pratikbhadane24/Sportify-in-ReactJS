@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { placeOrder } from "../actions/orderAction";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
-import { validate } from "uuid";
 
 export default function Checkout({ amount }) {
   const dispatch = useDispatch();
