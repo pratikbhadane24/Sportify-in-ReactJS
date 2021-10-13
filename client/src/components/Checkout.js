@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { placeOrder } from "../actions/orderAction";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import { validate } from "uuid";
 
 export default function Checkout({ amount }) {
   const dispatch = useDispatch();
@@ -14,7 +15,11 @@ export default function Checkout({ amount }) {
   function tokenHandler(token) {
     dispatch(placeOrder(token, amount));
   }
-
+  function validate() {
+    if (!localStorage.getItem("currentUser")) {
+      window.location.href = "/login";
+    }
+  }
   return (
     <div>
       {loading && <Loader />}
@@ -31,7 +36,10 @@ export default function Checkout({ amount }) {
         shippingAddress
         stripeKey="pk_test_51JixkcSCvyPsvabEBTo9nDCL49VENL2EC43KAmTZbd9QmqerJpzMmC2E0VMdeWR73pAqZr6ZGPYFZjTWxvTwjUYP00xuLLvtXh"
       >
-        <button className="m-3 mb-4 btn btn-lg btn-success btn-pay">
+        <button
+          className="m-3 mb-4 btn btn-lg btn-success btn-pay"
+          onClick={validate}
+        >
           Proceed To Payment
         </button>
       </StripeCheckout>
