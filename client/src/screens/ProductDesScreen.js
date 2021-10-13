@@ -49,7 +49,7 @@ export default function ProductDesScreen({ match }) {
           </div>
           <div className="col-md-6 text-left">
             <div className="m-5 card p-5">
-            <h4>Want to Buy?</h4>
+              <h4>Want to Buy?</h4>
               <h1>Price: ₹{product.price}</h1>
               <hr />
               <h1>Select Quantity</h1>
@@ -80,7 +80,7 @@ export default function ProductDesScreen({ match }) {
               <br />
               <hr />
               <br />
-              <Review />
+              <Review product={product} />
             </div>
           </div>
         </div>

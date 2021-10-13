@@ -1,6 +1,7 @@
 import {
   getAllProductsReducer,
   getProductByIdReducer,
+  addProductReviewReducer,
 } from "./reducers/productReducer";
 import { cartReducer } from "./reducers/cartReducer";
 import { combineReducers } from "redux";
@@ -23,6 +24,7 @@ const finalReducer = combineReducers({
   placeOrderReducer: placeOrderReducer,
   getOrdersByUserIdReducer: getOrdersByUserIdReducer,
   getOrderByIdReducer: getOrderByIdReducer,
+  addProductReviewReducer: addProductReviewReducer,
 });
 
 const cartItems = localStorage.getItem("cartItems")

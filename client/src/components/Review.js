@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Rating from "react-rating";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductReview } from "../actions/productActions";
 
 export default function Review() {
+  const dispatch = useDispatch();
   const [rating, setrating] = useState(5);
   const [comment, setcomment] = useState("");
 
-function sendreview(){
-    alert(rating+comment)
-}
-  
+  function sendreview() {
+    const review = {
+      rating: rating,
+      comment: comment,
+    };
+
+    dispatch(addProductReview(review, product._id));
+  }
+
   return (
     <div className="text-start">
       <h4>Give a Review</h4>
