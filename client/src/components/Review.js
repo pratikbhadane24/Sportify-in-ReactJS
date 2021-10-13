@@ -54,6 +54,26 @@ export default function Review({ product }) {
       <button className="btn btn-dark btn-lg mt-5" onClick={sendreview}>
         Submit Review
       </button>
+
+      <hr />
+      <h4>Latest Reviews</h4>
+      {product.reviews &&
+        product.reviews.map((review) => {
+          return (
+            <div className="text-start">
+              <Rating
+                style={{ color: "orange" }}
+                initialRating={review.rating}
+                emptySymbol="fa fa-star-o"
+                fullSymbol="fa fa-star"
+                readonly
+              />
+              <p>{review.comment}</p>
+              <p>{review.name}</p>
+              <hr />
+            </div>
+          );
+        })}
     </div>
   );
 }
