@@ -9,12 +9,24 @@ export default function Review({ product }) {
   const [comment, setcomment] = useState("");
 
   function sendreview() {
-    const review = {
-      rating: rating,
-      comment: comment,
-    };
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    var alreadyreviewed;
+    for (let i = 0; i < product.reviews.length; i++) {
+      if (product.reviews[i].userid == currentUser._id) {
+        alreadyreviewed = true;
+      }
+    }
 
-    dispatch(addProductReview(review, product._id));
+    if (alreadyreviewed) {
+      alert(`You have already reviewed this Product.`);
+    } else {
+      const review = {
+        rating: rating,
+        comment: comment,
+      };
+
+      dispatch(addProductReview(review, product._id));
+    }
   }
 
   return (
