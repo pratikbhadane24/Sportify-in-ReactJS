@@ -55,3 +55,15 @@ export const updateUser = (userid, updateduser) => (dispatch) => {
       console.log(err);
     });
 };
+
+export const getAllUsers = () => (dispatch) => {
+  dispatch({ type: "GET_ALLUSERS_REQUEST" });
+  axios
+    .get("/api/users/getallusers")
+    .then((res) => {
+      dispatch({ type: "GET_ALLUSERS_SUCCESS", payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({ type: "GET_ALLUSERS_FAILED", payload: err });
+    });
+};
