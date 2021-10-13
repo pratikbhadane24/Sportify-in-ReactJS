@@ -73,7 +73,7 @@ export default function Review({ product }) {
                 readonly
               />
               <p>{review.comment}</p>
-              <p>{review.name}</p>
+              <p>By: {review.name}</p>
               <hr />
             </div>
           );
