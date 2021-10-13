@@ -15,8 +15,10 @@ export default function Userslist() {
   }, []);
 
   return (
-    <div>
-      <table className="table table-striped table-bordered table-hover mb-5">
+    <div className="pt-2 p-5 mt-0">
+      <h4 className="text-start mb-3">Users List</h4>
+      {loading && <Loader />}
+      <table className="table table-striped table-bordered table-hover mb-5 ">
         <thead className="bg-dark text-light">
           <tr>
             <th>User ID</th>
@@ -27,7 +29,6 @@ export default function Userslist() {
         </thead>
 
         <tbody>
-          {loading && <Loader />}
           {error && <Error />}
           {users &&
             users.map((user) => {
