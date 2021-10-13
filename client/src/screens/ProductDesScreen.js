@@ -34,7 +34,7 @@ export default function ProductDesScreen({ match }) {
         <div className="row">
           <div className="col-md-6">
             <div className="card p-5 m-2">
-              <h1>{product.name}</h1>
+              <h4>{product.name}</h4>
               <img
                 src={product.image}
                 className="img-fluid m-3 bigImg"
@@ -48,7 +48,7 @@ export default function ProductDesScreen({ match }) {
             </div>
           </div>
           <div className="col-md-6 text-left">
-            <div className="m-5 card p-5">
+            <div className="m-2 card p-5">
               <h4>Want to Buy?</h4>
               <h1>Price: ₹{product.price}</h1>
               <hr />
