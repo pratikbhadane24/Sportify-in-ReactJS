@@ -18,7 +18,7 @@ export const loginUser = (user) => (dispatch) => {
   dispatch({ type: "USER_LOGIN_REQUEST" });
 
   axios
-    .post("/api/users/login/", user)
+    .post("/api/users/login", user)
     .then((res) => {
       dispatch({ type: "USER_LOGIN_SUCCESS" });
 
@@ -44,10 +44,11 @@ export const updateUser = (userid, updateduser) => (dispatch) => {
   dispatch({ type: "USER_UPDATE_REQUEST" });
 
   axios
-    .post("/api/users/update", {userid, updateduser})
+    .post("/api/users/update", { userid: userid, updateduser: updateduser })
     .then((res) => {
       dispatch({ type: "USER_UPDATE_SUCCESS" });
       console.log(res);
+      window.location.reload();
     })
     .catch((err) => {
       dispatch({ type: "USER_UPDATE_FAILED", payload: err });

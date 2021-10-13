@@ -14,7 +14,8 @@ export default function Profilescreen() {
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
 
-  function update() {
+  function update(e) {
+    e.preventDefault();
     if (password == cpassword) {
       const updateduser = {
         name: name,
@@ -31,9 +32,7 @@ export default function Profilescreen() {
     <div className="signup-form container">
       <form className="card" onSubmit={update}>
         <h4>Update Your Profile</h4>
-        <h1 className="text-center">
-          Please fill in this form to create an account!
-        </h1>
+        <h1 className="text-center">You can update your Profile from here:</h1>
         {loading && <Loader />}
         {error && (
           <div class="alert alert-danger" role="alert">

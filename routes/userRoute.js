@@ -46,4 +46,23 @@ router.post("/login", (req, res) => {
   );
 });
 
+router.post("/update", (req, res) => {
+  const { userid, updateduser } = req.body;
+  User.findByIdAndUpdate(
+    userid,
+    {
+      name: updateduser.name,
+      email: updateduser.email,
+      password: updateduser.password,
+    },
+    (err) => {
+      if (err) {
+        return res.status(400).json({ message: "Something went wrong!" });
+      } else {
+        res.send("User Details Updated Successfully.");
+      }
+    }
+  );
+});
+
 module.exports = router;

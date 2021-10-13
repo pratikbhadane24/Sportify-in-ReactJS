@@ -70,7 +70,7 @@ export const updateReducer = (state = {}, action) => {
       return {
         ...state,
         loading: false,
-        error: "User Already Registered",
+        error: "Maybe something is wrong",
       };
     default: {
       return state;
