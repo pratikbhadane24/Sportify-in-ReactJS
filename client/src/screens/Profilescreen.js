@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { updateUser } from "../actions/userActions";
 import Loader from "../components/Loader";
 
 export default function Profilescreen() {
   const loginstate = useSelector((state) => state.loginReducer);
+  const updateuserstate = useSelector((state) => state.updateReducer);
+  const { loading, success, error } = updateuserstate;
   const currentUser = loginstate.currentUser;
   const [name, setname] = useState(currentUser.name);
   const [email, setemail] = useState(currentUser.email);
-
+  const dispatch = useDispatch();
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
 
@@ -18,6 +21,7 @@ export default function Profilescreen() {
         email: email,
         password: password,
       };
+      dispatch(updateUser(currentUser._id, updateduser));
     } else {
       alert("Passwords Don't Match!");
     }
