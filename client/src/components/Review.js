@@ -9,23 +9,27 @@ export default function Review({ product }) {
   const [comment, setcomment] = useState("");
 
   function sendreview() {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    var alreadyreviewed;
-    for (let i = 0; i < product.reviews.length; i++) {
-      if (product.reviews[i].userid == currentUser._id) {
-        alreadyreviewed = true;
+    if (localStorage.getItem("currentUser")) {
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      var alreadyreviewed;
+      for (let i = 0; i < product.reviews.length; i++) {
+        if (product.reviews[i].userid == currentUser._id) {
+          alreadyreviewed = true;
+        }
       }
-    }
 
-    if (alreadyreviewed) {
-      alert(`You have already reviewed this Product.`);
+      if (alreadyreviewed) {
+        alert(`You have already reviewed this Product.`);
+      } else {
+        const review = {
+          rating: rating,
+          comment: comment,
+        };
+
+        dispatch(addProductReview(review, product._id));
+      }
     } else {
-      const review = {
-        rating: rating,
-        comment: comment,
-      };
-
-      dispatch(addProductReview(review, product._id));
+      window.location.href = "/login";
     }
   }
 
