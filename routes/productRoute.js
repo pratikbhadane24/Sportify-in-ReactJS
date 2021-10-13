@@ -33,6 +33,10 @@ router.post("/addreview", async (req, res) => {
     comment: review.comment,
   };
   product.reviews.push(reviewmodel);
+  var rating =
+    product.reviews.reduce((acc, x) => acc + x.rating, 0) /
+    product.reviews.length;
+  product.rating = rating;
 
   product.save((err) => {
     if (err) {
