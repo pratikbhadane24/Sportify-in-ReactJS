@@ -13,6 +13,7 @@ import Aboutusscreen from "./screens/Aboutusscreen";
 import Ordersscreen from "./screens/Ordersscreen";
 import Orderinfo from "./screens/Orderinfo";
 import Profilescreen from "./screens/Profilescreen";
+import Adminscreen from "./screens/Adminscreen";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/orders" component={Ordersscreen} />
         <Route path="/orderinfo/:orderid" component={Orderinfo} />
         <Route path="/profile" component={Profilescreen} />
+        <Route path="/admin" component={Adminscreen} />
       </BrowserRouter>
       <Footer />
     </div>
