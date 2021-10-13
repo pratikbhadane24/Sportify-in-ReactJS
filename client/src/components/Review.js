@@ -3,7 +3,7 @@ import Rating from "react-rating";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductReview } from "../actions/productActions";
 
-export default function Review() {
+export default function Review({ product }) {
   const dispatch = useDispatch();
   const [rating, setrating] = useState(5);
   const [comment, setcomment] = useState("");
