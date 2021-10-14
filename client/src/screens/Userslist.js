@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllUsers } from "../actions/userActions";
+import { deleteUser, getAllUsers } from "../actions/userActions";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 
@@ -38,7 +38,7 @@ export default function Userslist() {
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
-                    <i class="fa fa-trash"></i>
+                    <i class="fa fa-trash" onClick={()=>{dispatch(deleteUser(user._id))}}></i>
                   </td>
                 </tr>
               );

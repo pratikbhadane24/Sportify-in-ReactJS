@@ -75,4 +75,14 @@ router.get("/getallusers", (req, res) => {
   });
 });
 
+router.post("/deleteuser", (req, res) => {
+  User.findByIdAndRemove(req.body.userid, (err) => {
+    if (err) {
+      return res.status(400).json({ message: "Something went wrong!" });
+    } else {
+      res.send("User Deleted Successfully.");
+    }
+  });
+});
+
 module.exports = router;
