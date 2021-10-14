@@ -29,7 +29,7 @@ export default function Userslist() {
         </thead>
 
         <tbody>
-          {error && <Error />}
+          {error && <Error error="Something Went Wrong" />}
           {users &&
             users.map((user) => {
               return (
@@ -38,7 +38,12 @@ export default function Userslist() {
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
-                    <i class="fa fa-trash" onClick={()=>{dispatch(deleteUser(user._id))}}></i>
+                    <i
+                      class="fa fa-trash"
+                      onClick={() => {
+                        dispatch(deleteUser(user._id));
+                      }}
+                    ></i>
                   </td>
                 </tr>
               );
