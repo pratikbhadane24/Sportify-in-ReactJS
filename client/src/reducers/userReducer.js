@@ -102,3 +102,28 @@ export const getAllUsersReducer = (state = { users: [] }, action) => {
     }
   }
 };
+
+export const deleteUserReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "DELETE_USER_REQUEST":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "DELETE_USER_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        success: true,
+      };
+    case "DELETE_USER_FAILED":
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default: {
+      return state;
+    }
+  }
+};

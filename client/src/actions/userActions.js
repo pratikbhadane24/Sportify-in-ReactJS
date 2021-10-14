@@ -67,3 +67,14 @@ export const getAllUsers = () => (dispatch) => {
       dispatch({ type: "GET_ALLUSERS_FAILED", payload: err });
     });
 };
+export const deleteUser = () => (dispatch) => {
+  dispatch({ type: "DELETE_USER_REQUEST" });
+  axios
+    .get("/api/users/deleteuser")
+    .then((res) => {
+      dispatch({ type: "DELETE_USER_SUCCESS", payload: res.data });
+    })
+    .catch((err) => {
+      dispatch({ type: "DELETE_USER_FAILED", payload: err });
+    });
+};
