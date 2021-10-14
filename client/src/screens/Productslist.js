@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
-import { getAllProducts } from "../actions/productActions";
+import { getAllProducts, deleteProduct } from "../actions/productActions";
 
 export default function Productslist() {
   const getallproductsstate = useSelector(
@@ -42,7 +42,12 @@ export default function Productslist() {
                   <td>{product.countInStock}</td>
                   <td>{product._id}</td>
                   <td>
-                    <i class="fa fa-trash"></i>
+                    <i
+                      class="fa fa-trash"
+                      onClick={() => {
+                        dispatch(deleteProduct(product._id));
+                      }}
+                    ></i>
                   </td>
                 </tr>
               );

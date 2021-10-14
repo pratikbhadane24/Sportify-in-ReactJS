@@ -73,9 +73,23 @@ export const addProductReview = (review, productid) => (dispatch, getState) => {
       console.log(res);
       dispatch({ type: "ADD_PRODUCT_REVIEW_SUCCESS" });
       alert(`Review Submitted Successfully.`);
-      window.location.reload()
+      window.location.reload();
     })
     .catch((err) => {
       dispatch({ type: "ADD_PRODUCT_REVIEW_FAILED" });
+    });
+};
+
+export const deleteProduct = (productid) => (dispatch) => {
+  dispatch({ type: "DELETE_PRODUCT_REQUEST" });
+  axios
+    .post("/api/products/deleteproduct", { productid })
+    .then((res) => {
+      dispatch({ type: "DELETE_PRODUCT_SUCCESS", payload: res.data });
+      alert("Product Deleted Successfully.");
+      window.location.reload();
+    })
+    .catch((err) => {
+      dispatch({ type: "DELETE_PRODUCT_FAILED", payload: err });
     });
 };
