@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../actions/productActions";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 export default function Addproduct() {
   const [name, setname] = useState("");
@@ -11,6 +13,9 @@ export default function Addproduct() {
   const [category, setcategory] = useState("");
   const [description, setdescription] = useState("");
   const dispatch = useDispatch();
+
+  const addproductstate = useSelector((state) => state.addProductReducer);
+  const { success, error, loading } = addproductstate;
 
   const addproduct = (e) => {
     e.preventDefault();
@@ -22,11 +27,12 @@ export default function Addproduct() {
       description: description,
       category,
     };
-   dispatch(addProduct(product))
+    dispatch(addProduct(product));
   };
 
   return (
     <div className="text-start">
+      {loading && <Loader />}
       <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 className="h2">Add Product</h1>
@@ -125,6 +131,12 @@ export default function Addproduct() {
             />
           </div>
           <hr />
+          {success && (
+            <div class="alert alert-success text-center" role="alert">
+              Product Added Successfully.
+            </div>
+          )}
+          {error && <Error error="Something went wrong!" />}
           <div className=" mb-3 d-grid">
             <button className="btn btn-dark" type="submit">
               Add Product

@@ -101,6 +101,7 @@ export const addProduct = (product) => (dispatch) => {
     .then((res) => {
       console.log(res);
       dispatch({ type: "ADD_PRODUCT_SUCCESS" });
+      window.location.reload();
     })
     .catch((err) => {
       dispatch({ type: "ADD_PRODUCT_FAILED" });
