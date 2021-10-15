@@ -115,7 +115,7 @@ export const updateProduct = (productid, updatedproduct) => (dispatch) => {
     .then((res) => {
       console.log(res);
       dispatch({ type: "UPDATE_PRODUCT_SUCCESS" });
-      window.location.href="/admin/productslist"
+      window.location.href = "/admin/productslist";
     })
     .catch((err) => {
       dispatch({ type: "UPDATE_PRODUCT_FAILED" });
