@@ -4,6 +4,7 @@ import {
   addProductReviewReducer,
   deleteProductReducer,
   addProductReducer,
+  updateProductReducer,
 } from "./reducers/productReducer";
 import { cartReducer } from "./reducers/cartReducer";
 import { combineReducers } from "redux";
@@ -38,6 +39,7 @@ const finalReducer = combineReducers({
   deleteUserReducer: deleteUserReducer,
   deleteProductReducer: deleteProductReducer,
   addProductReducer: addProductReducer,
+  updateProductReducer: updateProductReducer,
 });
 
 const cartItems = localStorage.getItem("cartItems")

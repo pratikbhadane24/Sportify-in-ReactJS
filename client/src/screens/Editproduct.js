@@ -42,6 +42,7 @@ export default function Editproduct({ match }) {
       category: category,
       image: imageurl,
     };
+    dispatch(updateProduct(match.params.productid, updatedproduct));
   }
 
   return (

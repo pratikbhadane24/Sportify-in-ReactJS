@@ -107,3 +107,17 @@ export const addProduct = (product) => (dispatch) => {
       dispatch({ type: "ADD_PRODUCT_FAILED" });
     });
 };
+
+export const updateProduct = (productid, updatedproduct) => (dispatch) => {
+  dispatch({ type: "UPDATE_PRODUCT_REQUEST" });
+  axios
+    .post("/api/products/updateproduct", { productid, updatedproduct })
+    .then((res) => {
+      console.log(res);
+      dispatch({ type: "UPDATE_PRODUCT_SUCCESS" });
+      window.location.reload();
+    })
+    .catch((err) => {
+      dispatch({ type: "UPDATE_PRODUCT_FAILED" });
+    });
+};
