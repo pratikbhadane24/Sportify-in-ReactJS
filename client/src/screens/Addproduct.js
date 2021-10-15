@@ -21,6 +21,7 @@ export default function Addproduct() {
       description: description,
       category,
     };
+    console.log(product)
   };
 
   return (
