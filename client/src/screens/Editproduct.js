@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getProductById } from "../actions/productActions";
+import { getProductById, updateProduct } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
@@ -33,7 +33,8 @@ export default function Editproduct({ match }) {
     }
   }, [dispatch, product]);
 
-  function editproduct() {
+  function editproduct(e) {
+    e.preventDefault();
     const updatedproduct = {
       name: name,
       price: price,

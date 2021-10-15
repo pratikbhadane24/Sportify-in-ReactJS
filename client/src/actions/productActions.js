@@ -115,7 +115,6 @@ export const updateProduct = (productid, updatedproduct) => (dispatch) => {
     .then((res) => {
       console.log(res);
       dispatch({ type: "UPDATE_PRODUCT_SUCCESS" });
-      window.location.reload();
     })
     .catch((err) => {
       dispatch({ type: "UPDATE_PRODUCT_FAILED" });

@@ -64,7 +64,7 @@ router.post("/addproduct", (req, res) => {
   const productModel = new Product({
     name: product.name,
     price: product.price,
-    description: product.description, 
+    description: product.description,
     countInStock: product.countInStock,
     image: product.image,
     category: product.category,
@@ -76,6 +76,27 @@ router.post("/addproduct", (req, res) => {
       res.send("Product Added Successfully.");
     }
   });
+});
+
+router.post("/updateproduct", (req, res) => {
+  Product.findByIdAndUpdate(
+    req.body.productid,
+    {
+      name: req.body.updatedproduct.name,
+      price: req.body.updatedproduct.price,
+      category: req.body.updatedproduct.category,
+      description: req.body.updatedproduct.description,
+      countInStock: req.body.updatedproduct.countInStock,
+      image: req.body.updatedproduct.image,
+    },
+    (err) => {
+      if (err) {
+        return res.status(400).json({ message: "Something went wrong!" });
+      } else {
+        res.send("Product Updated Successfully.");
+      }
+    }
+  );
 });
 
 module.exports = router;
