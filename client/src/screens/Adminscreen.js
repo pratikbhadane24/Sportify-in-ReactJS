@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router";
 import Userslist from "./Userslist";
 import Productslist from "./Productslist";
 import Addproduct from "./Addproduct";
 import Orderslist from "./Orderslist";
 import Editproduct from "./Editproduct";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Adminscreen() {
+  const userstate = useSelector((state) => state.loginReducer);
+
+  const currentUser = userstate.currentUser;
+  useEffect(() => {
+    if (currentUser) {
+      if (!currentUser.isAdmin) {
+        window.location.href = "/";
+      }
+    } else {
+      window.location.href = "/";
+    }
+  }, []);
+
   return (
     <div className="row container">
       <nav

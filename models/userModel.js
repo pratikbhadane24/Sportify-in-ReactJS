@@ -12,7 +12,11 @@ const userSchema = mongoose.Schema({
   password: {
     type: String,
     require,
-  }
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const User = mongoose.model("users", userSchema);

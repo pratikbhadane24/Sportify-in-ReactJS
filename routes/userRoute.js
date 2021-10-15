@@ -33,6 +33,7 @@ router.post("/login", (req, res) => {
     (err, docs) => {
       if (docs.length > 0) {
         const user = {
+          isAdmin: docs[0].isAdmin,
           name: docs[0].name,
           _id: docs[0]._id,
           email: docs[0].email,
