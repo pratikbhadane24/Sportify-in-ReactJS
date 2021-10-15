@@ -25,7 +25,7 @@ export default function Navbar() {
             aria-label="Toggle navigation"
           >
             <span className="text-light">
-              <i className="fa fa-bars" ></i>
+              <i className="fa fa-bars"></i>
             </span>
           </button>
           <a className="navbar-brand" href="/">
@@ -69,12 +69,13 @@ export default function Navbar() {
                   >
                     <li>
                       <a className="dropdown-item" href="/profile">
-                        Profile
+                        Profile &nbsp;<i class="fa fa-user"></i>
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="/orders">
-                        Orders
+                        Orders &nbsp;
+                        <i class="fa fa-shopping-bag"></i>
                       </a>
                     </li>
                     <li
@@ -83,7 +84,8 @@ export default function Navbar() {
                         dispatch(logoutUser());
                       }}
                     >
-                      Logout
+                      Logout &nbsp;
+                      <i class="fa fa-sign-out"></i>
                     </li>
                   </ul>
                 </div>

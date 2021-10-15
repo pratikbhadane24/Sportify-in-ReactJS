@@ -48,9 +48,9 @@ export default function Ordersscreen() {
                       <td>{order.transactionId}</td>
                       <td>
                         {order.isDelivered ? (
-                          <li>Delivered</li>
+                          <li className="list-group-item bg-success">Delivered</li>
                         ) : (
-                          <li>Order Placed</li>
+                          <li className="list-group-item bg-info">Order Placed</li>
                         )}
                       </td>
                     </tr>

@@ -31,9 +31,9 @@ export default function Addproduct() {
   };
 
   return (
-    <div className="text-start">
+    <div className="text-start shadow-lg p-5 mb-5 bg-body rounded">
       {loading && <Loader />}
-      <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <main className=" ms-sm-auto px-md-4">
         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 className="h2">Add Product</h1>
           <div className="btn-toolbar mb-2 mb-md-0">
@@ -49,7 +49,7 @@ export default function Addproduct() {
         </div>
       </main>
       <form onSubmit={addproduct}>
-        <div className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div className="ms-sm-auto px-md-4">
           <div className="mb-3">
             <label className="form-label">Product Title</label>
             <input

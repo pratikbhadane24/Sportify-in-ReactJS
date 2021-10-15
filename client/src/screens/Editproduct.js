@@ -50,7 +50,7 @@ export default function Editproduct({ match }) {
   }
 
   return (
-    <div className="text-start">
+    <div className="text-start shadow-lg p-5 mb-5 bg-body rounded">
       {loading && (
         <div className="text-center">
           <Loader />
@@ -64,7 +64,7 @@ export default function Editproduct({ match }) {
       {updateerror && <Error error="Something went wrong!" />}
       {product && (
         <form onSubmit={editproduct}>
-          <div className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div className="ms-sm-auto px-md-4">
             <div className="mb-3">
               <h4>Edit Product</h4>
               <label className="form-label">Product Title</label>
