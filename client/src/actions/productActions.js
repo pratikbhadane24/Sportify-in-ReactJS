@@ -93,3 +93,16 @@ export const deleteProduct = (productid) => (dispatch) => {
       dispatch({ type: "DELETE_PRODUCT_FAILED", payload: err });
     });
 };
+
+export const addProduct = (product) => (dispatch) => {
+  dispatch({ type: "ADD_PRODUCT_REQUEST" });
+  axios
+    .post("/api/products/addproduct", { product })
+    .then((res) => {
+      console.log(res);
+      dispatch({ type: "ADD_PRODUCT_SUCCESS" });
+    })
+    .catch((err) => {
+      dispatch({ type: "ADD_PRODUCT_FAILED" });
+    });
+};
