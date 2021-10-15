@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { getProductById } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 
@@ -18,10 +17,32 @@ export default function Editproduct({ match }) {
   const [description, setdescription] = useState("");
 
   useEffect(() => {
-    dispatch(getProductById(match.params.productid));
-  }, []);
+    if (product) {
+      if (product._id == match.params.productid) {
+        setname(product.name);
+        setprice(product.price);
+        setdescription(product.description);
+        setimageurl(product.image);
+        setcategory(product.category);
+        setcountinstock(product.countInStock);
+      } else {
+        dispatch(getProductById(match.params.productid));
+      }
+    } else {
+      dispatch(getProductById(match.params.productid));
+    }
+  }, [dispatch, product]);
 
-  function editproduct() {}
+  function editproduct() {
+    const updatedproduct = {
+      name: name,
+      price: price,
+      description: description,
+      countInStock: countinstock,
+      category: category,
+      image: imageurl,
+    };
+  }
 
   return (
     <div className="text-start">
