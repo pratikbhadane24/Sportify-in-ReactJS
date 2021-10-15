@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addProduct } from "../actions/productActions";
 
 export default function Addproduct() {
   const [name, setname] = useState("");
@@ -21,7 +22,7 @@ export default function Addproduct() {
       description: description,
       category,
     };
-    console.log(product);
+   dispatch(addProduct(product))
   };
 
   return (

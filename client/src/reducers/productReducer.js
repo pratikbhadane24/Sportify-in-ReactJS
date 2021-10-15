@@ -89,18 +89,18 @@ export const deleteProductReducer = (state = {}, action) => {
 
 export const addProductReducer = (state = {}, action) => {
   switch (action.type) {
-    case "DELETE_PRODUCT_REQUEST":
+    case "ADD_PRODUCT_REQUEST":
       return {
         ...state,
         loading: true,
       };
-    case "DELETE_PRODUCT_SUCCESS":
+    case "ADD_PRODUCT_SUCCESS":
       return {
         ...state,
         loading: false,
         success: true,
       };
-    case "DELETE_PRODUCT_FAILED":
+    case "ADD_PRODUCT_FAILED":
       return {
         ...state,
         loading: false,
