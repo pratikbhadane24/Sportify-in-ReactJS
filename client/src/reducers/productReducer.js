@@ -117,19 +117,19 @@ export const updateProductReducer = (state = {}, action) => {
     case "UPDATE_PRODUCT_REQUEST":
       return {
         ...state,
-        loading: true,
+        updateloading: true,
       };
     case "UPDATE_PRODUCT_SUCCESS":
       return {
         ...state,
-        loading: false,
+        updateloading: false,
         success: true,
       };
     case "UPDATE_PRODUCT_FAILED":
       return {
         ...state,
-        loading: false,
-        error: action.payload,
+        updateloading: false,
+        updateerror: action.payload,
       };
     default: {
       return state;

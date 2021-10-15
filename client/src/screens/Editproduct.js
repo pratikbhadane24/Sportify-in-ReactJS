@@ -9,6 +9,9 @@ export default function Editproduct({ match }) {
   const productstate = useSelector((state) => state.getProductByIdReducer);
   const { product, error, loading } = productstate;
 
+  const updateproductstate = useSelector((state) => state.updateProductReducer);
+  const { success, updateerror, updateloading } = updateproductstate;
+
   const [name, setname] = useState("");
   const [price, setprice] = useState();
   const [countinstock, setcountinstock] = useState();
@@ -53,6 +56,12 @@ export default function Editproduct({ match }) {
           <Loader />
         </div>
       )}
+      {updateloading && (
+        <div className="text-center">
+          <Loader />
+        </div>
+      )}
+      {updateerror && <Error error="Something went wrong!" />}
       {product && (
         <form onSubmit={editproduct}>
           <div className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -139,6 +148,11 @@ export default function Editproduct({ match }) {
             </div>
             <hr />
             {error && <Error error="Something went wrong!" />}
+            {success && (
+              <div class="alert alert-success" role="alert">
+                Product Updated Successfully.
+              </div>
+            )}
             <div className=" mb-3 d-grid">
               <button className="btn btn-dark" type="submit">
                 Edit Product Details
