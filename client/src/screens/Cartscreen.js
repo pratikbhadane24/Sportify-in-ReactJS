@@ -15,8 +15,8 @@ export default function Cartscreen() {
   return (
     <div>
       <div className="row mt-5 justify-content-center">
-        <div className="col-md-8 card">
-          <h3 className="m-5">My Cart</h3>
+        <div className="col-md-8 shadow-lg p-3 mb-5 bg-body rounded">
+          <h4 className="m-5">My Cart</h4>
           <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
             <thead className="bg-dark text-light">
               <tr>
@@ -59,9 +59,9 @@ export default function Cartscreen() {
               })}
             </tbody>
           </table>
-          <hr />
+ 
           <h4 className="m-3">SubTotal: ₹{subtotal}</h4>
-          <hr />
+
           <Checkout amount={subtotal} />
         </div>
       </div>

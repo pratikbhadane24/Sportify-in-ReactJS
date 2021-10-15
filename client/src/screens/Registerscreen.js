@@ -37,7 +37,7 @@ export default function Registerscreen() {
         width="300"
         height="120"
       />
-      <form className="card" onSubmit={register}>
+      <form className="shadow-lg p-3 mb-5 bg-body rounded" onSubmit={register}>
         <h4>Sign Up</h4>
         <h1 className="text-center">
           Please fill in this form to create an account!
@@ -53,7 +53,7 @@ export default function Registerscreen() {
             Registration Successful.
           </div>
         )}
-        <hr />
+        <br />
         <div className="form-group">
           <div className="input-group">
             <div className="input-group-prepend">

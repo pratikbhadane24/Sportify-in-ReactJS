@@ -78,9 +78,16 @@ export default function ProductDesScreen({ match }) {
                       Add to Cart
                     </button>
                   ) : (
-                    <button className="btn btn-dark btn-lg" disabled onClick={addtocart}>
-                      Add to Cart
-                    </button>
+                    <div>
+                      <h4 className="text-danger text-start">Oops... Product is Out of Stock</h4>
+                      <button
+                        className="btn btn-dark btn-lg"
+                        disabled
+                        onClick={addtocart}
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
