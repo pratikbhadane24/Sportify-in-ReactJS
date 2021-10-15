@@ -1,4 +1,5 @@
 import axios from "axios";
+
 export const placeOrder = (token, subtotal) => (dispatch, getState) => {
   const currentUser = getState().loginReducer.currentUser;
   const demoItems = getState().cartReducer.cartItems;
@@ -41,6 +42,7 @@ export const getOrdersByUserId = () => (dispatch, getState) => {
       dispatch({ type: "GET_ORDERSBYUSERID_FAILED", payload: err });
     });
 };
+
 export const getOrderById = (orderid) => (dispatch, getState) => {
   dispatch({ type: "GET_ORDERBYID_REQUEST" });
   axios
@@ -51,5 +53,18 @@ export const getOrderById = (orderid) => (dispatch, getState) => {
     })
     .catch((err) => {
       dispatch({ type: "GET_ORDERBYID_FAILED", payload: err });
+    });
+};
+
+export const getAllOrders = () => (dispatch, getState) => {
+  dispatch({ type: "GET_ALLORDERS_REQUEST" });
+  axios
+    .get("/api/orders/getallorders")
+    .then((res) => {
+      dispatch({ type: "GET_ALLORDERS_SUCCESS", payload: res.data });
+      console.log(res.data);
+    })
+    .catch((err) => {
+      dispatch({ type: "GET_ALLORDERS_FAILED", payload: err });
     });
 };
