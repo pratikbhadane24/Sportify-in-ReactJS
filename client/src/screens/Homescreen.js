@@ -73,7 +73,7 @@ export default function Homescreen() {
                 </a>
               </div>
               <div className="carousel-item">
-                <a href="/product/615634397db4e95a0b48b7df">
+                <a href="/product/61694872838e35531229b5fc">
                   <img
                     src="https://lh3.googleusercontent.com/Hwc3ZfBsSTmmoyD_15ueuQJ8FUyY2CGJIvOg-zvlA66POJNcHBgNTU1JVltkdP3Dxcm0Q_gUFcJNeokABQ8dOABNenFQSfUOYFKnOzyckBaOzL-pWKkxueWQ7Cj4nqRYVnX_rk-z=w2400"
                     className="d-block w-100"
