@@ -4,6 +4,7 @@ import Userslist from "./Userslist";
 import Productslist from "./Productslist";
 import Addproduct from "./Addproduct";
 import Orderslist from "./Orderslist";
+import Editproduct from "./Editproduct";
 
 export default function Adminscreen() {
   return (
@@ -51,6 +52,7 @@ export default function Adminscreen() {
           <Route path="/admin/productslist" component={Productslist} />
           <Route path="/admin/addnewproduct" component={Addproduct} />
           <Route path="/admin/orderslist" component={Orderslist} />
+          <Route path="/admin/editproduct/:productid" component={Editproduct} />
         </Switch>
       </div>
     </div>

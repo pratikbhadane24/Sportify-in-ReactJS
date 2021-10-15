@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
+import { Link } from "react-router-dom";
 import { getAllProducts, deleteProduct } from "../actions/productActions";
 
 export default function Productslist() {
@@ -27,7 +28,7 @@ export default function Productslist() {
             <th>Price</th>
             <th>Stock</th>
             <th>ID</th>
-            <th>Delete</th>
+            <th>Actions</th>
           </tr>
         </thead>
 
@@ -48,6 +49,10 @@ export default function Productslist() {
                         dispatch(deleteProduct(product._id));
                       }}
                     ></i>
+                    &nbsp; &nbsp;
+                    <Link to={`/admin/editproduct/${product._id}`}>
+                      <i className="fa fa-pencil-square-o text-dark"></i>
+                    </Link>
                   </td>
                 </tr>
               );
