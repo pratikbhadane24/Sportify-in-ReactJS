@@ -21,17 +21,20 @@ export default function Addproduct() {
       description: description,
       category,
     };
-    console.log(product)
+    console.log(product);
   };
 
   return (
     <div className="text-start">
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Add Product</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <a class="btn-group me-2 text-decoration-none" href="/admin">
-              <button type="button" class="btn btn-sm btn-outline-secondary">
+      <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 className="h2">Add Product</h1>
+          <div className="btn-toolbar mb-2 mb-md-0">
+            <a className="btn-group me-2 text-decoration-none" href="/admin">
+              <button
+                type="button"
+                className="btn btn-sm btn-outline-secondary"
+              >
                 Go Back
               </button>
             </a>
@@ -39,12 +42,12 @@ export default function Addproduct() {
         </div>
       </main>
       <form onSubmit={addproduct}>
-        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <div class="mb-3">
-            <label class="form-label">Product Title</label>
+        <div className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div className="mb-3">
+            <label className="form-label">Product Title</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Add Product Title"
               required
               value={name}
@@ -53,12 +56,12 @@ export default function Addproduct() {
               }}
             />
           </div>
-          <div class="mb-3">
-            <label for="productdescription" class="form-label">
+          <div className="mb-3">
+            <label for="productdescription" className="form-label">
               Product Description
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               rows="3"
               placeholder="Add Product Description"
               required
@@ -68,11 +71,11 @@ export default function Addproduct() {
               }}
             ></textarea>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Product Category</label>
+          <div className="mb-3">
+            <label className="form-label">Product Category</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Add Product Category"
               required
               value={category}
@@ -81,11 +84,11 @@ export default function Addproduct() {
               }}
             />
           </div>
-          <div class="mb-3">
-            <label class="form-label">Product Price</label>
+          <div className="mb-3">
+            <label className="form-label">Product Price</label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               placeholder="Add Product Price"
               required
               value={price}
@@ -94,11 +97,11 @@ export default function Addproduct() {
               }}
             />
           </div>
-          <div class="mb-3">
-            <label class="form-label">Count In Stock</label>
+          <div className="mb-3">
+            <label className="form-label">Count In Stock</label>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               placeholder="Add Count In Stock"
               required
               value={countinstock}
@@ -107,11 +110,11 @@ export default function Addproduct() {
               }}
             />
           </div>
-          <div class="mb-3">
-            <label class="form-label">Image URL</label>
+          <div className="mb-3">
+            <label className="form-label">Image URL</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Add Product Image URL"
               required
               value={imageurl}
@@ -121,8 +124,8 @@ export default function Addproduct() {
             />
           </div>
           <hr />
-          <div class=" mb-3 d-grid">
-            <button class="btn btn-dark" type="submit">
+          <div className=" mb-3 d-grid">
+            <button className="btn btn-dark" type="submit">
               Add Product
             </button>
           </div>
