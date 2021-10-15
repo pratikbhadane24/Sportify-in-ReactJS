@@ -18,7 +18,7 @@ export default function Userslist() {
     <div className="pt-2 p-5 mt-0">
       <h4 className="text-start mb-3">Users List</h4>
       {loading && <Loader />}
-      <table className="table table-striped table-bordered table-hover mb-5 ">
+      <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
         <thead className="bg-dark text-light">
           <tr>
             <th>User ID</th>

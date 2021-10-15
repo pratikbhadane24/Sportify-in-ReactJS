@@ -24,7 +24,9 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="text-light">
+              <i className="fa fa-bars" ></i>
+            </span>
           </button>
           <a className="navbar-brand" href="/">
             Sportify

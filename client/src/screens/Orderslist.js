@@ -18,7 +18,7 @@ export default function Orderslist() {
     <div>
       <h4 className="text-start ">Order List</h4>
       {error && <Error error="Something went wrong!" />}
-      <table className="table table-striped table-bordered table-hover mb-5">
+      <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
         <thead className="bg-dark text-light">
           <tr>
             <th>Order ID</th>

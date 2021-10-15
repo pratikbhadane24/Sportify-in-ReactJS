@@ -55,29 +55,29 @@ export default function Review({ product }) {
           setcomment(e.target.value);
         }}
       />
-      <button className="btn btn-dark btn-lg mt-5" onClick={sendreview}>
+      <button className="btn btn-dark btn-lg mt-3 mb-3" onClick={sendreview}>
         Submit Review
       </button>
-
-      <hr />
-      <h4>Latest Reviews</h4>
-      {product.reviews &&
-        product.reviews.map((review) => {
-          return (
-            <div className="text-start">
-              <Rating
-                style={{ color: "orange" }}
-                initialRating={review.rating}
-                emptySymbol="fa fa-star-o"
-                fullSymbol="fa fa-star"
-                readonly
-              />
-              <p>{review.comment}</p>
-              <p>By: {review.name}</p>
-              <hr />
-            </div>
-          );
-        })}
+      <div className="shadow-lg p-5 mt-3 bg-body rounded">
+        <h4>Latest Reviews</h4>
+        {product.reviews &&
+          product.reviews.map((review) => {
+            return (
+              <div className="text-start">
+                <Rating
+                  style={{ color: "orange" }}
+                  initialRating={review.rating}
+                  emptySymbol="fa fa-star-o"
+                  fullSymbol="fa fa-star"
+                  readonly
+                />
+                <p>{review.comment}</p>
+                <p>By: {review.name}</p>
+                <hr />
+              </div>
+            );
+          })}{" "}
+      </div>
     </div>
   );
 }

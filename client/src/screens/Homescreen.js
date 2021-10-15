@@ -119,7 +119,7 @@ export default function Homescreen() {
           products.map((product) => {
             return (
               <div className="col-md-3 m-2 p-2">
-                <div className="bg-light card card-zoom">
+                <div className="bg-light card-zoom">
                   <Product product={product} />
                 </div>
               </div>

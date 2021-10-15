@@ -17,7 +17,7 @@ export default function Cartscreen() {
       <div className="row mt-5 justify-content-center">
         <div className="col-md-8 card">
           <h3 className="m-5">My Cart</h3>
-          <table className="table table-striped table-bordered table-hover mb-5">
+          <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
             <thead className="bg-dark text-light">
               <tr>
                 <th>Name</th>

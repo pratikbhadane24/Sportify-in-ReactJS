@@ -33,7 +33,7 @@ export default function ProductDesScreen({ match }) {
       ) : (
         <div className="row">
           <div className="col-md-6">
-            <div className="card p-5 m-2">
+            <div className="shadow-lg bg-body rounded p-5 m-2">
               <h4>{product.name}</h4>
               <img
                 src={product.image}
@@ -48,39 +48,40 @@ export default function ProductDesScreen({ match }) {
             </div>
           </div>
           <div className="col-md-6 text-left">
-            <div className="m-2 card p-5">
-              <h4>Want to Buy?</h4>
-              <h1>Price: ₹{product.price}</h1>
-              <hr />
-              <h1>Select Quantity</h1>
+            <div className="shadow-lg bg-body rounded ">
+              <div className="m-2 p-5">
+                <h4>Want to Buy?</h4>
+                <h1>Price: ₹{product.price}</h1>
+                <hr />
+                <h1>Select Quantity</h1>
 
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <label class="input-group-text">Options</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text">Options</label>
+                  </div>
+                  <select
+                    className="custom-select"
+                    value={quantity}
+                    onChange={(e) => {
+                      setquantity(e.target.value);
+                    }}
+                  >
+                    {[...Array(product.countInStock).keys()].map((x, i) => {
+                      return <option value={i + 1}>{i + 1}</option>;
+                    })}
+                  </select>
                 </div>
-                <select
-                  className="custom-select"
-                  value={quantity}
-                  onChange={(e) => {
-                    setquantity(e.target.value);
-                  }}
-                >
-                  {[...Array(product.countInStock).keys()].map((x, i) => {
-                    return <option value={i + 1}>{i + 1}</option>;
-                  })}
-                </select>
+                <hr />
+                <div className="text-start">
+                  <button className="btn btn-dark btn-lg" onClick={addtocart}>
+                    Add to Cart
+                  </button>
+                </div>
               </div>
-              <hr />
-              <div className="text-start">
-                <button className="btn btn-dark btn-lg" onClick={addtocart}>
-                  Add to Cart
-                </button>
+
+              <div className="shadow-lg bg-body rounded p-5">
+                <Review product={product} />
               </div>
-              <br />
-              <br />
-              <hr />
-              <br />
-              <Review product={product} />
             </div>
           </div>
         </div>
