@@ -73,9 +73,15 @@ export default function ProductDesScreen({ match }) {
                 </div>
                 <hr />
                 <div className="text-start">
-                  <button className="btn btn-dark btn-lg" onClick={addtocart}>
-                    Add to Cart
-                  </button>
+                  {product.countInStock > 0 ? (
+                    <button className="btn btn-dark btn-lg" onClick={addtocart}>
+                      Add to Cart
+                    </button>
+                  ) : (
+                    <button className="btn btn-dark btn-lg" disabled onClick={addtocart}>
+                      Add to Cart
+                    </button>
+                  )}
                 </div>
               </div>
 
