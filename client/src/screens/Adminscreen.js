@@ -61,9 +61,7 @@ export default function Adminscreen() {
         </div>
       </nav>
       <div className="col-9 p-4">
-        <h4>
-          Welcome to the Admin Panel choose from the side Navbar for actions.
-        </h4>
+        <h4 className="text-start">Admin Panel</h4>
         <Switch>
           <Route path="/admin/userslist" component={Userslist} />
           <Route path="/admin/productslist" component={Productslist} />
