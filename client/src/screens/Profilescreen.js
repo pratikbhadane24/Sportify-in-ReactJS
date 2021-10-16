@@ -30,7 +30,10 @@ export default function Profilescreen() {
 
   return (
     <div className="signup-form container">
-      <form className="card shadow-lg p-3 mb-5 bg-body rounded" onSubmit={update}>
+      <form
+        className="card shadow-lg p-3 mb-5 bg-body rounded"
+        onSubmit={update}
+      >
         <h4>Update Your Profile</h4>
         <h1 className="text-center">You can update your Profile from here:</h1>
         {loading && <Loader />}
@@ -44,7 +47,7 @@ export default function Profilescreen() {
             Update Successful.
           </div>
         )}
-        <hr />
+        <br />
         <div className="form-group">
           <div className="input-group">
             <div className="input-group-prepend">
