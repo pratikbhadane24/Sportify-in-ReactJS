@@ -18,9 +18,8 @@ export default function Productslist() {
   }, []);
 
   return (
-    <div className="pt-2 p-5 mt-0">
-      <h4 className="text-start mb-3">Products List</h4>
-      {loading && <Loader />}
+    <div className="pt-2 p-5 mt-0 shadow-lg p-5 m-5 bg-body rounded table-responsive">
+      <h4 className="text-start mt-3 mb-3">Products List</h4>
       <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
         <thead className="bg-dark text-light">
           <tr>
@@ -31,6 +30,7 @@ export default function Productslist() {
             <th>Actions</th>
           </tr>
         </thead>
+        {loading && <Loader />}
 
         <tbody>
           {error && <Error error="Something Went Wrong" />}

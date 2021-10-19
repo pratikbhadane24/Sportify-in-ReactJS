@@ -15,10 +15,10 @@ export default function Userslist() {
   }, []);
 
   return (
-    <div className="pt-2 p-5 mt-0">
+    <div className="pt-2 p-5 mt-0 shadow-lg p-3 mb-5 bg-body rounded table-responsive">
       <h4 className="text-start mb-3">Users List</h4>
-      {loading && <Loader />}
-      <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
+
+      <table className="table table-striped table-bordered table-hover mb-5">
         <thead className="bg-dark text-light">
           <tr>
             <th>User ID</th>
@@ -27,7 +27,7 @@ export default function Userslist() {
             <th>Delete</th>
           </tr>
         </thead>
-
+        {loading && <Loader />}
         <tbody>
           {error && <Error error="Something Went Wrong" />}
           {users &&

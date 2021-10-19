@@ -21,9 +21,9 @@ export default function Ordersscreen() {
   return (
     <div>
       <div className="row mt-5 justify-content-center">
-        <div className="col-md-8 card">
+        <div className="col-md-8 shadow-lg p-5 mb-5 bg-body rounded table-responsive">
           <h3 className="m-5">My Orders</h3>
-          <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
+          <table className="table table-striped table-bordered table-hover mb-5">
             <thead className="bg-dark text-light">
               <tr>
                 <th>Order ID</th>

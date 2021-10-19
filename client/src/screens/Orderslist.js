@@ -15,7 +15,7 @@ export default function Orderslist() {
   }, []);
 
   return (
-    <div>
+    <div className="shadow-lg p-5 m-5 bg-body rounded table-responsive">
       <h4 className="text-start ">Order List</h4>
       {error && <Error error="Something went wrong!" />}
       <table className="table table-striped table-bordered table-hover mb-5 table-responsive-sm">
@@ -43,7 +43,7 @@ export default function Orderslist() {
                   <td>{order._id}</td>
                   <td>{order.email}</td>
                   <td>{order.userid}</td>
-                  <td>{order.orderAmount}</td>
+                  <td>₹{order.orderAmount}</td>
                   <td>{order.createdAt}</td>
                   <td>{order.transactionId}</td>
                 </tr>
