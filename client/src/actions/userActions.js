@@ -8,6 +8,7 @@ export const registerNewUser = (user) => (dispatch) => {
     .then((res) => {
       dispatch({ type: "USER_REGISTER_SUCCESS" });
       console.log(res);
+      window.location.href = "/login";
     })
     .catch((err) => {
       dispatch({ type: "USER_REGISTER_FAILED", payload: err });
