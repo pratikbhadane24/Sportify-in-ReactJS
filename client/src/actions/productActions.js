@@ -51,6 +51,10 @@ export const filterProducts = (searchKey, sortKey, category) => (dispatch) => {
             return a.price - b.price;
           });
         }
+      } else {
+        filteredproducts = res.data.sort((a, b) => {
+          return -a.rating + b.rating;
+        });
       }
       if (category !== "all") {
         filteredproducts = res.data.filter((product) => {
