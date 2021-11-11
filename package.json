@@ -3,8 +3,15 @@
   "version": "2.0.0",
   "description": "Sportify in ReactJS",
   "main": "index.js",
+  "engines": {
+    "node": "16.4.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client-install": "npm install --prefix client",
+    "server": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -17,6 +24,7 @@
   },
   "homepage": "https://github.com/pratikbhadane24/Sportify-in-ReactJS#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

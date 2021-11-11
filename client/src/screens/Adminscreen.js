@@ -22,7 +22,7 @@ export default function Adminscreen() {
   }, []);
 
   return (
-    <div className="row container">
+    <div className="row">
       <nav
         id="sidebarMenu"
         className="col-3 collapse d-sm-block sidebar collapse bg-white"
@@ -61,7 +61,7 @@ export default function Adminscreen() {
         </div>
       </nav>
       <div className="col-9 p-4">
-        <h4 className="text-start">Admin Panel</h4>
+        <h4 className="text-center">Admin Panel</h4>
         <Switch>
           <Route path="/admin/userslist" component={Userslist} />
           <Route path="/admin/productslist" component={Productslist} />

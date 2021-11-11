@@ -45,7 +45,7 @@ export default function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#contact">
                   <span className="fa fa-address-book"></span> Contact Us
                 </a>
               </li>

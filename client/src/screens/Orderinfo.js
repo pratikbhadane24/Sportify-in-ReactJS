@@ -21,7 +21,7 @@ export default function Orderinfo({ match }) {
       {order && (
         <div className="container">
           <div className="row justify-content-center m-5">
-            <div className="col-md-5 card m-5 mt-0">
+            <div className="col-md-5 shadow-lg p-3 mb-5 bg-body rounded m-5 mt-0">
               <h3 className="mt-4 text-info">Items in your Order</h3>
               <hr />
               {order.orderItems.map((item) => {
@@ -32,8 +32,8 @@ export default function Orderinfo({ match }) {
                       Quantity: <b>{item.quantity}</b>
                     </h6>
                     <h6>
-                      Price: {item.quantity} * ₹{item.price} ={" "}
-                      ₹{item.price * item.quantity}
+                      Price: {item.quantity} * ₹{item.price} = ₹
+                      {item.price * item.quantity}
                     </h6>
                     <hr />
                   </div>
@@ -42,7 +42,7 @@ export default function Orderinfo({ match }) {
             </div>
 
             <div className="col-md-5 text-start">
-              <div className="card pt-0 p-3">
+              <div className="shadow-lg p-3 mb-5 bg-body rounded">
                 <h3 className="mt-4 text-info text-center">Order Details</h3>
                 <hr />
                 <h6>Order ID: {order._id}</h6>
@@ -57,7 +57,7 @@ export default function Orderinfo({ match }) {
                 )}
               </div>
               <br />
-              <div className="card pt-0 p-3">
+              <div className="shadow-lg p-3 mb-5 bg-body rounded">
                 <h3 className="mt-4 text-info text-center">Shipping Details</h3>
                 <hr />
                 <h6>

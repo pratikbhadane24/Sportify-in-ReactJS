@@ -69,7 +69,6 @@ export const getAllUsers = () => (dispatch) => {
     });
 };
 
-
 export const deleteUser = (userid) => (dispatch) => {
   dispatch({ type: "DELETE_USER_REQUEST" });
   axios

@@ -40,7 +40,7 @@ export default function Filter() {
           </div>
           <div className="col-2 m-2">
             <select
-              className="drop-down drop form-control"
+              className="drop-down drop custom-select form-control"
               value={sort}
               onChange={(e) => {
                 setsort(e.target.value);
@@ -53,7 +53,7 @@ export default function Filter() {
           </div>
           <div className="col-2 m-2">
             <select
-              className="drop-down drop form-control"
+              className="drop-down drop custom-select form-control"
               value={category}
               onChange={(e) => {
                 setcategory(e.target.value);
