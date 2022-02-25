@@ -19,7 +19,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a className="foot-color" href="#">
+                <a className="foot-color" href="#s">
                   <span className="fa fa-address-book"></span>&nbsp; Contact
                 </a>
               </li>

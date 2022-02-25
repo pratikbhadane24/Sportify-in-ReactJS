@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Rating from "react-rating";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addProductReview } from "../actions/productActions";
 
 export default function Review({ product }) {
@@ -13,6 +13,7 @@ export default function Review({ product }) {
       const currentUser = JSON.parse(localStorage.getItem("currentUser"));
       var alreadyreviewed;
       for (let i = 0; i < product.reviews.length; i++) {
+        // eslint-disable-next-line
         if (product.reviews[i].userid == currentUser._id) {
           alreadyreviewed = true;
         }

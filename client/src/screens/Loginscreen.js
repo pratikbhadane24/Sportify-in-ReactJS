@@ -1,4 +1,3 @@
-import { load } from "dotenv";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../actions/userActions";
@@ -31,11 +30,7 @@ export default function Loginscreen() {
     <div className="login-body">
       <div className="form-signin">
         <form onSubmit={login}>
-          <img
-            src="https://i.ibb.co/kJHDDW1/loginlogo.gif"
-            width="300"
-            height="120"
-          />
+          <img alt="logo" src="https://i.ibb.co/kJHDDW1/loginlogo.gif" width="300" height="120" />
           {loading && <Loader />}
           <br />
           <br />
@@ -69,8 +64,7 @@ export default function Loginscreen() {
           <button
             id="sign-in-button"
             className="w-100 btn btn-lg btn-dark btn-outline-info"
-            type="submit"
-          >
+            type="submit">
             Log in
           </button>
           <br />
@@ -90,9 +84,9 @@ export default function Loginscreen() {
             <div className="col-md-12">
               <a
                 className="w-100 btn btn-lg btn-google btn-block btn-outline bg-info ghov"
-                href="#"
-              >
+                href="#google">
                 <img
+                  alt="logo-google"
                   src="https://img.icons8.com/color/16/000000/google-logo.png"
                   height="30"
                 />{" "}
@@ -102,9 +96,7 @@ export default function Loginscreen() {
           </div>
 
           <br />
-          <p className="mt-5 mb-3 text-muted text-center">
-            &copy; Sportify ~ 2021
-          </p>
+          <p className="mt-5 mb-3 text-muted text-center">&copy; Sportify ~ 2021</p>
         </form>
       </div>
     </div>

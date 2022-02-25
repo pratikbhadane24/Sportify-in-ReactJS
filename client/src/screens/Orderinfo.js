@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrderById } from "../actions/orderAction";
 import Loader from "../components/Loader";
@@ -12,6 +12,7 @@ export default function Orderinfo({ match }) {
 
   useEffect(() => {
     dispatch(getOrderById(match.params.orderid));
+    // eslint-disable-next-line
   }, [dispatch]);
 
   return (
@@ -32,8 +33,7 @@ export default function Orderinfo({ match }) {
                       Quantity: <b>{item.quantity}</b>
                     </h6>
                     <h6>
-                      Price: {item.quantity} * ₹{item.price} = ₹
-                      {item.price * item.quantity}
+                      Price: {item.quantity} * ₹{item.price} = ₹{item.price * item.quantity}
                     </h6>
                     <hr />
                   </div>
@@ -50,11 +50,7 @@ export default function Orderinfo({ match }) {
                 <h6>Date of Order: {order.createdAt.substring(0, 10)}</h6>
                 <h6>Transaction ID: {order.transactionId}</h6>
 
-                {order.isDelivered ? (
-                  <h6>Order Delivered</h6>
-                ) : (
-                  <h6>Order Placed</h6>
-                )}
+                {order.isDelivered ? <h6>Order Delivered</h6> : <h6>Order Placed</h6>}
               </div>
               <br />
               <div className="shadow-lg p-3 mb-5 bg-body rounded">
@@ -83,25 +79,23 @@ export default function Orderinfo({ match }) {
         <p>
           <b>Which items are eligible for a Free Replacement?</b>
           <p>
-            Fulfilled by Amazon items, Prime eligible items and few Seller
-            Fulfilled items are eligible for free replacements. If an eligible
-            item is out of stock from the same seller, it cannot be replaced.
-            Only a refund against the returned item will be issued.
+            Fulfilled by Amazon items, Prime eligible items and few Seller Fulfilled items are
+            eligible for free replacements. If an eligible item is out of stock from the same
+            seller, it cannot be replaced. Only a refund against the returned item will be issued.
           </p>
           <b>What are the conditions for Free Replacement?</b>
           <p>
-            Items within return window and in stock (exact same item) with same
-            seller are eligible for free replacement. The free replacement order
-            will be shipped through standard shipping once the original order is
-            returned. Free replacements can be requested if the following
-            conditions apply:
+            Items within return window and in stock (exact same item) with same seller are eligible
+            for free replacement. The free replacement order will be shipped through standard
+            shipping once the original order is returned. Free replacements can be requested if the
+            following conditions apply:
           </p>
           <ol>
             <li>Item received is physically damaged;</li>
             <li>Item received has missing parts or accessories;</li>
             <li>
-              Item received is different from their description on the product
-              detail page on Amazon.in;
+              Item received is different from their description on the product detail page on
+              Amazon.in;
             </li>{" "}
             or
             <li>Item received is defective/does not work properly.</li>

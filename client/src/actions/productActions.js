@@ -42,6 +42,7 @@ export const filterProducts = (searchKey, sortKey, category) => (dispatch) => {
         });
       }
       if (sortKey !== "popular") {
+        // eslint-disable-next-line
         if (sortKey == "htl") {
           filteredproducts = res.data.sort((a, b) => {
             return -a.price + b.price;

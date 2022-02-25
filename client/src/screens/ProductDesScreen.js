@@ -11,9 +11,7 @@ export default function ProductDesScreen({ match }) {
   const dispatch = useDispatch();
   const [quantity, setquantity] = useState(1);
 
-  const getproductbyidstate = useSelector(
-    (state) => state.getProductByIdReducer
-  );
+  const getproductbyidstate = useSelector((state) => state.getProductByIdReducer);
   const { product, loading, error } = getproductbyidstate;
 
   function addtocart() {
@@ -22,6 +20,7 @@ export default function ProductDesScreen({ match }) {
 
   useEffect(() => {
     dispatch(getProductById(productid));
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -35,11 +34,7 @@ export default function ProductDesScreen({ match }) {
           <div className="col-md-6">
             <div className="shadow-lg bg-body rounded p-5 m-2">
               <h4>{product.name}</h4>
-              <img
-                src={product.image}
-                className="img-fluid m-3 bigImg"
-                alt="myProduct"
-              />
+              <img src={product.image} className="img-fluid m-3 bigImg" alt="myProduct" />
               <p>
                 <h1>Product Description:</h1>
 
@@ -64,8 +59,7 @@ export default function ProductDesScreen({ match }) {
                     value={quantity}
                     onChange={(e) => {
                       setquantity(e.target.value);
-                    }}
-                  >
+                    }}>
                     {[...Array(product.countInStock).keys()].map((x, i) => {
                       return <option value={i + 1}>{i + 1}</option>;
                     })}
@@ -80,11 +74,7 @@ export default function ProductDesScreen({ match }) {
                   ) : (
                     <div>
                       <h4 className="text-danger text-start">Oops... Product is Out of Stock</h4>
-                      <button
-                        className="btn btn-dark btn-lg"
-                        disabled
-                        onClick={addtocart}
-                      >
+                      <button className="btn btn-dark btn-lg" disabled onClick={addtocart}>
                         Add to Cart
                       </button>
                     </div>

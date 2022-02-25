@@ -36,16 +36,16 @@ export default function Aboutusscreen() {
                   I'm passionate about exploring ways of Tech Companies making lives of people easier. And I'm hoping to get insights from a professional with experience in this field.
 
                   </p>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa twt-card fa-twitter text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa fb-card fa-facebook text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa twt-card fa-linkedin text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa insta-card fa-instagram text-light mx-2"></i>
                   </a>
                 </div>
@@ -66,16 +66,16 @@ export default function Aboutusscreen() {
                   An enthusiastic programmer who loves to interact and learn about new technologies and aspires to be a Software and UI Developer. Currently studying at Xavier Institute of Engineering.
 
                   </p>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa twt-card fa-twitter text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa fb-card fa-facebook text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa twt-card fa-linkedin text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa insta-card fa-instagram text-light mx-2"></i>
                   </a>
                 </div>
@@ -96,16 +96,16 @@ export default function Aboutusscreen() {
                   Currently studying in Xavier Institute of Engineering and will graduate in 2023. 
                   Wishes to be a full stack developer and has interests in programming languages such as Java and Python.
                   </p>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa twt-card fa-twitter text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa fb-card fa-facebook text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa twt-card fa-linkedin text-light mx-2"></i>
                   </a>
-                  <a href="#">
+                  <a href="#s">
                     <i class="h3 fa insta-card fa-instagram text-light mx-2"></i>
                   </a>
                 </div>

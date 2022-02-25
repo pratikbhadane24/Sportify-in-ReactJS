@@ -23,6 +23,7 @@ export default function Registerscreen() {
       email: email,
       password: password,
     };
+    // eslint-disable-next-line
     if (password == cpassword) {
       dispatch(registerNewUser(user));
     } else {
@@ -32,16 +33,10 @@ export default function Registerscreen() {
 
   return (
     <div className="signup-form container">
-      <img
-        src="https://i.ibb.co/kJHDDW1/loginlogo.gif"
-        width="300"
-        height="120"
-      />
+      <img alt="logo" src="https://i.ibb.co/kJHDDW1/loginlogo.gif" width="300" height="120" />
       <form className="shadow-lg p-3 mb-5 bg-body rounded" onSubmit={register}>
         <h4>Sign Up</h4>
-        <h1 className="text-center">
-          Please fill in this form to create an account!
-        </h1>
+        <h1 className="text-center">Please fill in this form to create an account!</h1>
         {loading && <Loader />}
         {error && (
           <div class="alert alert-danger" role="alert">
@@ -133,15 +128,12 @@ export default function Registerscreen() {
         </div>
         <div className="form-group">
           <label className="form-check-label">
-            <input type="checkbox" required /> I accept the{" "}
-            <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
+            <input type="checkbox" required /> I accept the <a href="#terms">Terms of Use</a> &amp;{" "}
+            <a href="#privacy">Privacy Policy</a>
           </label>
         </div>
         <div className="form-group">
-          <button
-            type="submit"
-            className="w-100 btn btn-lg btn-dark btn-outline-info"
-          >
+          <button type="submit" className="w-100 btn btn-lg btn-dark btn-outline-info">
             Register
           </button>
         </div>

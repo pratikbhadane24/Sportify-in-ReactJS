@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../actions/productActions";
 import Loader from "../components/Loader";
@@ -38,10 +38,7 @@ export default function Addproduct() {
           <h1 className="h2">Add Product</h1>
           <div className="btn-toolbar mb-2 mb-md-0">
             <a className="btn-group me-2 text-decoration-none" href="/admin">
-              <button
-                type="button"
-                className="btn btn-sm btn-outline-secondary"
-              >
+              <button type="button" className="btn btn-sm btn-outline-secondary">
                 Go Back
               </button>
             </a>
@@ -75,8 +72,7 @@ export default function Addproduct() {
               value={description}
               onChange={(e) => {
                 setdescription(e.target.value);
-              }}
-            ></textarea>
+              }}></textarea>
           </div>
           <div className="mb-3">
             <label className="form-label">Product Category</label>

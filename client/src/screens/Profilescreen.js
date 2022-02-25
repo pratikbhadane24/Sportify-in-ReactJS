@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../actions/userActions";
 import Loader from "../components/Loader";
@@ -16,6 +16,7 @@ export default function Profilescreen() {
 
   function update(e) {
     e.preventDefault();
+    // eslint-disable-next-line
     if (password == cpassword) {
       const updateduser = {
         name: name,

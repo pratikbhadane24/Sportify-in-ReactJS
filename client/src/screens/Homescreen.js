@@ -1,24 +1,21 @@
 import React from "react";
-import axios from "axios";
 import Product from "../components/Product";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../actions/productActions";
-import { getAllProductsReducer } from "../reducers/productReducer";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
 import Filter from "../components/Filter";
 
 export default function Homescreen() {
-  const getallproductsstate = useSelector(
-    (state) => state.getAllProductsReducer
-  );
+  const getallproductsstate = useSelector((state) => state.getAllProductsReducer);
 
   const { loading, products, error } = getallproductsstate;
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllProducts());
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -26,11 +23,7 @@ export default function Homescreen() {
       <section className="mb-2 pt-2 pb-5">
         <div className="container">
           <h4 className="p-3 bg-dark text-info">Featured Products</h4>
-          <div
-            id="carouselExampleIndicators"
-            className="carousel slide"
-            data-bs-ride="carousel"
-          >
+          <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
               <button
                 type="button"
@@ -38,20 +31,17 @@ export default function Homescreen() {
                 data-bs-slide-to="0"
                 className="active"
                 aria-current="true"
-                aria-label="Slide 1"
-              ></button>
+                aria-label="Slide 1"></button>
               <button
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
+                aria-label="Slide 2"></button>
               <button
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
+                aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
@@ -86,24 +76,16 @@ export default function Homescreen() {
               className="carousel-control-prev"
               type="button"
               data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
+              data-bs-slide="prev">
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Previous</span>
             </button>
             <button
               className="carousel-control-next"
               type="button"
               data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
+              data-bs-slide="next">
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Next</span>
             </button>
           </div>

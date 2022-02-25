@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, getAllUsers } from "../actions/userActions";
 import Loader from "../components/Loader";
@@ -12,6 +12,7 @@ export default function Userslist() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllUsers());
+    // eslint-disable-next-line
   }, []);
 
   return (

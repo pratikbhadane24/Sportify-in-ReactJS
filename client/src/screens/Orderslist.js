@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Error from "../components/Error";
@@ -12,6 +12,7 @@ export default function Orderslist() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllOrders());
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -38,8 +39,7 @@ export default function Orderslist() {
                 <tr
                   onClick={() => {
                     window.location.href = `/orderinfo/${order._id}`;
-                  }}
-                >
+                  }}>
                   <td>{order._id}</td>
                   <td>{order.email}</td>
                   <td>{order.userid}</td>

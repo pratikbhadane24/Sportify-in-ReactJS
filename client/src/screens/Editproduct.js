@@ -21,6 +21,7 @@ export default function Editproduct({ match }) {
 
   useEffect(() => {
     if (product) {
+      // eslint-disable-next-line
       if (product._id == match.params.productid) {
         setname(product.name);
         setprice(product.price);
@@ -34,6 +35,7 @@ export default function Editproduct({ match }) {
     } else {
       dispatch(getProductById(match.params.productid));
     }
+    // eslint-disable-next-line
   }, [dispatch, product]);
 
   function editproduct(e) {
@@ -91,8 +93,7 @@ export default function Editproduct({ match }) {
                 value={description}
                 onChange={(e) => {
                   setdescription(e.target.value);
-                }}
-              ></textarea>
+                }}></textarea>
             </div>
             <div className="mb-3">
               <label className="form-label">Product Category</label>

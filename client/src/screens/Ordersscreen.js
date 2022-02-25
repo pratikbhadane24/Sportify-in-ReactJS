@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrdersByUserId } from "../actions/orderAction";
 import Loader from "../components/Loader";
@@ -16,6 +16,7 @@ export default function Ordersscreen() {
     } else {
       window.location.href = "/login";
     }
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -41,21 +42,16 @@ export default function Ordersscreen() {
                       <tr
                         onClick={() => {
                           window.location = `/orderinfo/${order._id}`;
-                        }}
-                      >
+                        }}>
                         <td>{order._id}</td>
                         <td>₹{order.orderAmount}</td>
                         <td>{order.createdAt.substring(0, 10)}</td>
                         <td>{order.transactionId}</td>
                         <td>
                           {order.isDelivered ? (
-                            <li className="list-group-item bg-success">
-                              Delivered
-                            </li>
+                            <li className="list-group-item bg-success">Delivered</li>
                           ) : (
-                            <li className="list-group-item bg-info">
-                              Order Placed
-                            </li>
+                            <li className="list-group-item bg-info">Order Placed</li>
                           )}
                         </td>
                       </tr>
@@ -64,7 +60,7 @@ export default function Ordersscreen() {
                 {error && <Error error="Something went Wrong." />}
               </tbody>
             </table>
-          {loading && <Loader />}
+            {loading && <Loader />}
           </div>
         </div>
       </div>
